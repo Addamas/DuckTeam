@@ -1,0 +1,165 @@
+<Project>
+  <Name>Gamelab 2</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>UML</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>PlayerController</Name>
+        <Access>Public</Access>
+        <Location left="28" top="35" />
+        <Size width="229" height="198" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float movementSpeed</Member>
+        <Member type="Field">float jumpHeight</Member>
+        <Member type="Field">collider playerColllider</Member>
+        <Member type="Field">animator playerAnimator</Member>
+        <Member type="Method">public void Movement()</Member>
+        <Member type="Method">public void Jump()</Member>
+        <Member type="Method">public void Crouch()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CameraController</Name>
+        <Access>Public</Access>
+        <Location left="278" top="180" />
+        <Size width="219" height="165" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">audiosource audioPlayer</Member>
+        <Member type="Field">GameObject playerBody</Member>
+        <Member type="Field">float rotationSpeed</Member>
+        <Member type="Method">public void Interact()</Member>
+        <Member type="Method">public void Rotation()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EnemyBehaviour</Name>
+        <Access>Public</Access>
+        <Location left="28" top="501" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Enum enemyState</Member>
+        <Member type="Field">float movementSpeed</Member>
+        <Member type="Field">NavMeshAgent navmesh</Member>
+        <Member type="Method">public void Movement()</Member>
+        <Member type="Method">public void Sight()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>enemyState = Wandering, Idle, Chasing
+</Text>
+        <Location left="206" top="501" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Class">
+        <Name>Loot</Name>
+        <Access>Public</Access>
+        <Location left="309" top="35" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float lootNumber</Member>
+        <Member type="Field">string lootName</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Crafting_Workbench</Name>
+        <Access>Public</Access>
+        <Location left="556" top="247" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">bool canCraft</Member>
+        <Member type="Field">GameObject itemCrafted</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GUI</Name>
+        <Access>Public</Access>
+        <Location left="1151" top="219" />
+        <Size width="170" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float insanitymeter</Member>
+        <Member type="Field">float battery</Member>
+        <Member type="Field">string SMS</Member>
+        <Member type="Method">public void SMS()</Member>
+        <Member type="Method">public void Battery()</Member>
+        <Member type="Method">public void Options()</Member>
+        <Member type="Method">public void Notebook()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ScriptedEvents</Name>
+        <Access>Public</Access>
+        <Location left="918" top="501" />
+        <Size width="170" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float currentQuest</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameManager</Name>
+        <Access>Public</Access>
+        <Location left="1151" top="501" />
+        <Size width="170" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">list quests</Member>
+        <Member type="Field">float currentQuest</Member>
+        <Member type="Field">Transform playerTransform</Member>
+        <Member type="Method">public void SpawnPlayer()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Instanity</Name>
+        <Access>Public</Access>
+        <Location left="918" top="219" />
+        <Size width="170" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float insanityMeter</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Comment" first="3" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="1" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="1" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="7" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="6" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="9" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
