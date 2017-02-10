@@ -1,0 +1,25 @@
+phone features;
+options	- messages(WhosApp) - heartbeat - picture album - infrared camera - notebook (diary) - Flashlight(gaat de batterij sneller van leeg)
+Optional~ Duckhunt - (Cheats unlockable)
+
+focus;
+telefoon UI
+Story
+psycho horror
+Enemy features
+Scripted events
+lantern moet je craften, mobile spotlight, lantern is point light.
+
+Story:
+je belt met je vriend voor je door het hek heen gaat en zodra je er doorheen bent verlies je verbinding, alles is zwart.
+in de intro kruip je door een gat in een hek terwijl het zwart is.
+nadat je door het hek bent plopt een foto van de brief in je beeld en die fade uit in je mobiel waarna je de weg naar de boerderij voor je ziet.
+het is totaal stil tot je bij het huis bent.
+je moet de box vinden in het verlaten huis, en zodra je hem vindt kom je erachter dat er objecten ontbreken en dan valt de energie weg.
+omdat het donker is, moet je de generator fixen dus ga je terug naar de kapotte auto in het begin, of je gaat gewoon exploren zonder licht.
+als je het huis explored gebeuren er allemaal gekke dingen en zodra je bijna bij het einde bent is er een raam.
+in dat raam kun je het maïsveld zien en daarin zie je een silloute van iets en zodra je erop inzoomed komt de anomaly recht voor je neus voorbij vliegen.
+voor de generator heb je een accu, startkabels en fuel nodig om het te fixen.
+nadat de generator gefixt is wordt de alien een probleem.
+ondertussen ga je terug naar het huis om alle verloren objecten te zoeken en ondertussen wordt de alien aggresiever (meer insanity effects).
+hierna opened de wereld en kun je verschillende kanten op om 5 notes te zoeken.

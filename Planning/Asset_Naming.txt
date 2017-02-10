@@ -1,0 +1,18 @@
+PRP_Name_001
+ARC_Name_001
+NAT_Name_001
+ALIV_Name_001
+SPRT_Name_001
+ANIM_Name_001
+SFX_Name_001
+BGM_Name_001
+PAR_Name_001
+SCR_Name_001
+SHDR_Name_001
+
+17 weken = 8 sprints
+1 sprint = 2 week
+elke sprint heeft bijv. 20 assets
+elke week zelf keuze uit assets, gebasseerd op 
+			uren gamelab van de week
+(MoSCoW heeft wel invloed)
