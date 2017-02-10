@@ -13,6 +13,7 @@ public class Field_Reposition : MonoBehaviour {
     Vector3 enterPos;
     public Transform playerB;
     public Transform playerTracker;
+    public Transform trckr;
 
 	void Start () {
 		
@@ -22,16 +23,37 @@ public class Field_Reposition : MonoBehaviour {
 		
 	}
 
-    void OnTriggerEnter(Collider onCol)
+    void OnTriggerEnter(Collider onEnter)
     {
-        if (onCol.transform.tag == "Player")
+        if (onEnter.transform.tag == "Player")
         {
             enterPos = playerB.position;
-            Transform trckr =  Instantiate(playerTracker, playerB.position, Quaternion.identity, this.transform);
-
-            //trckr.transform.position = playerB.position;
+            trckr = Instantiate(playerTracker, playerB.position, Quaternion.identity, this.transform);
             Debug.Log("Player entered field");
-            print(playerB.position);
+        }
+    }
+
+    void OnTriggerStay(Collider onStay)
+    {
+        if (onStay.transform.tag == "Player")
+        {
+            trckr.transform.position = new Vector3(enterPos.x, enterPos.y, playerB.position.z);
+            float dist = Vector3.Distance(playerB.position, trckr.position);
+            if (dist >= 10)
+            {
+                playerB.transform.position = trckr.transform.position;
+                playerB.GetChild(0).LookAt(trckr);
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider onExit)
+    {
+        if (onExit.transform.tag == "Player")
+        {
+            Destroy(trckr.gameObject);
+            trckr = null;
+            Debug.Log("Player exited field");
         }
     }
 }

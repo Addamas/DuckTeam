@@ -1,5 +1,5 @@
 phone features;
-options	- messages(WhosApp) - heartbeat - picture album - infrared camera - notebook (diary) - Flashlight(gaat de batterij sneller van leeg)
+options	- MapApp - messages(WhosApp) - heartbeat - picture album - infrared camera - notebook (diary) - Flashlight(gaat de batterij sneller van leeg)
 Optional~ Duckhunt - (Cheats unlockable)
 
 focus;
