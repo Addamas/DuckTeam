@@ -7,8 +7,8 @@
       <Entity type="Class">
         <Name>PlayerController</Name>
         <Access>Public</Access>
-        <Location left="28" top="35" />
-        <Size width="229" height="198" />
+        <Location left="595" top="371" />
+        <Size width="173" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">float movementSpeed</Member>
         <Member type="Field">float jumpHeight</Member>
@@ -22,8 +22,8 @@
       <Entity type="Class">
         <Name>CameraController</Name>
         <Access>Public</Access>
-        <Location left="278" top="180" />
-        <Size width="219" height="165" />
+        <Location left="851" top="426" />
+        <Size width="174" height="162" />
         <Collapsed>False</Collapsed>
         <Member type="Field">audiosource audioPlayer</Member>
         <Member type="Field">GameObject playerBody</Member>
@@ -35,37 +35,24 @@
       <Entity type="Class">
         <Name>EnemyBehaviour</Name>
         <Access>Public</Access>
-        <Location left="28" top="501" />
-        <Size width="162" height="216" />
+        <Location left="595" top="929" />
+        <Size width="174" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Enum enemyState</Member>
         <Member type="Field">float movementSpeed</Member>
         <Member type="Field">NavMeshAgent navmesh</Member>
+        <Member type="Field">bool inspectingArea</Member>
+        <Member type="Field">Animator anim</Member>
+        <Member type="Field">GameObject player</Member>
+        <Member type="Field">AudioSource sound</Member>
         <Member type="Method">public void Movement()</Member>
-        <Member type="Method">public void Sight()</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Comment">
-        <Text>enemyState = Wandering, Idle, Chasing
-</Text>
-        <Location left="206" top="501" />
-        <Size width="160" height="75" />
-      </Entity>
-      <Entity type="Class">
-        <Name>Loot</Name>
-        <Access>Public</Access>
-        <Location left="309" top="35" />
-        <Size width="162" height="111" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">float lootNumber</Member>
-        <Member type="Field">string lootName</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Crafting_Workbench</Name>
+        <Name>CraftingSystem</Name>
         <Access>Public</Access>
-        <Location left="556" top="247" />
-        <Size width="162" height="111" />
+        <Location left="1112" top="475" />
+        <Size width="174" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Field">bool canCraft</Member>
         <Member type="Field">GameObject itemCrafted</Member>
@@ -74,7 +61,7 @@
       <Entity type="Class">
         <Name>GUI</Name>
         <Access>Public</Access>
-        <Location left="1151" top="219" />
+        <Location left="256" top="652" />
         <Size width="170" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">float insanitymeter</Member>
@@ -89,7 +76,7 @@
       <Entity type="Class">
         <Name>ScriptedEvents</Name>
         <Access>Public</Access>
-        <Location left="918" top="501" />
+        <Location left="10" top="926" />
         <Size width="170" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">float currentQuest</Member>
@@ -98,7 +85,7 @@
       <Entity type="Class">
         <Name>GameManager</Name>
         <Access>Public</Access>
-        <Location left="1151" top="501" />
+        <Location left="256" top="926" />
         <Size width="170" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">list quests</Member>
@@ -108,57 +95,314 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Instanity</Name>
+        <Name>Insanity</Name>
         <Access>Public</Access>
-        <Location left="918" top="219" />
+        <Location left="10" top="652" />
         <Size width="170" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">float insanityMeter</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>EnemyVision</Name>
+        <Access>Public</Access>
+        <Location left="851" top="929" />
+        <Size width="174" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float viewRadius</Member>
+        <Member type="Field">float viewAngle</Member>
+        <Member type="Field">LayerMask targetMask</Member>
+        <Member type="Field">LayerMask obstacleMask</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Member type="Method">void FindVisableTargets()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>EnemyState</Name>
+        <Access>Public</Access>
+        <Location left="851" top="652" />
+        <Size width="174" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Idle</Value>
+        <Value>Inspecting</Value>
+        <Value>Walking</Value>
+        <Value>Chasing</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>ItemDatabase</Name>
+        <Access>Public</Access>
+        <Location left="10" top="30" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Item listItems</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Flashlight</Name>
+        <Access>Public</Access>
+        <Location left="851" top="30" />
+        <Size width="170" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">float batteryEnergy</Member>
+        <Member type="Field">GameObject light</Member>
+        <Member type="Field">bool flashing</Member>
+        <Member type="Method">public void BatteryDrain()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NoiseMaker</Name>
+        <Access>Public</Access>
+        <Location left="594" top="30" />
+        <Size width="170" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LightManager</Name>
+        <Access>Public</Access>
+        <Location left="1112" top="30" />
+        <Size width="170" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Light listLights</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Skybox</Name>
+        <Access>Public</Access>
+        <Location left="256" top="372" />
+        <Size width="174" height="215" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">list skyboxes</Member>
+        <Member type="Method">public void SwitchSkybox()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SoundManager</Name>
+        <Access>Public</Access>
+        <Location left="594" top="652" />
+        <Size width="174" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">list soundList</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ParticleManager</Name>
+        <Access>Public</Access>
+        <Location left="1112" top="652" />
+        <Size width="174" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Particle listParticles</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Particle</Name>
+        <Access>Public</Access>
+        <Location left="1112" top="929" />
+        <Size width="174" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">GameObject particleSystem</Member>
+        <Member type="Field">bool isActive</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Item</Name>
+        <Access>Public</Access>
+        <Location left="10" top="372" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String itemName</Member>
+        <Member type="Field">int itemNumber</Member>
+        <Member type="Field">Image image</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>InventorySystem</Name>
+        <Access>Public</Access>
+        <Location left="256" top="30" />
+        <Size width="174" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">ItemDatabase itemDatabase</Member>
+        <Member type="Field">list currentItems</Member>
+        <Member type="Field">bool active</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Light</Name>
+        <Access>Public</Access>
+        <Location left="1112" top="299" />
+        <Size width="170" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">light light</Member>
+        <Member type="Field">bool active</Member>
+        <Member type="Field">color colorLight</Member>
+        <Member type="Field">float intensity</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Comment" first="3" second="2">
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-      </Relationship>
       <Relationship type="Association" first="0" second="1">
         <Label>
         </Label>
-        <StartOrientation>Vertical</StartOrientation>
+        <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>793</X>
+          <Y>496</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Dependency" first="1" second="4">
+      <Relationship type="Dependency" first="1" second="3">
         <Label>
         </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
-      <Relationship type="Dependency" first="1" second="5">
+      <Relationship type="Dependency" first="5" second="6">
         <Label>
         </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
-      <Relationship type="Dependency" first="7" second="8">
+      <Relationship type="Dependency" first="4" second="7">
         <Label>
         </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
-      <Relationship type="Dependency" first="6" second="9">
-        <Label>
-        </Label>
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-      </Relationship>
-      <Relationship type="Dependency" first="9" second="7">
+      <Relationship type="Dependency" first="7" second="5">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="2" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>794</X>
+          <Y>1070</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Dependency" first="16" second="17">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="10" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="19" second="10">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="13" second="20">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="12" second="19">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="2" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="15" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>569</X>
+          <Y>745</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>451</X>
+          <Y>949</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="12" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>569</X>
+          <Y>222</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>522</X>
+          <Y>675</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="1" second="19">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>940</X>
+          <Y>370</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>305</X>
+          <Y>280</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Dependency" first="3" second="19">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1087</X>
+          <Y>490</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1065</X>
+          <Y>274</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="9" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>869</X>
+          <Y>893</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>729</X>
+          <Y>902</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
       </Relationship>
     </Relationships>
   </ProjectItem>
