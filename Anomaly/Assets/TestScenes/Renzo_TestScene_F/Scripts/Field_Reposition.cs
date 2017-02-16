@@ -42,7 +42,7 @@ public class Field_Reposition : MonoBehaviour {
             if (dist >= 10)
             {
                 playerB.transform.position = trckr.transform.position;
-                playerB.GetChild(0).LookAt(trckr);
+                
             }
         }
     }
