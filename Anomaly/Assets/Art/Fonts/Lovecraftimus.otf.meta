@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c93e1a77ce5d3e843a95700fd71de8ba
+timeCreated: 1488286474
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Lovecraftimus
+  fontNames:
+  - Lovecraftimus
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b596912aa45845242b4576cfc4d020a5
+timeCreated: 1488286474
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Final Frontier Old Style
+  fontNames:
+  - Final Frontier Old Style
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
