@@ -4,7 +4,7 @@ using System.Collections;
 public class MouseLook : MonoBehaviour {
 
     float rotationY;
-    public float mouseSensitivity;
+    public float mouseSensitivity = 1f;
     public float minimumY = -90;
     public float maximumY = 90;
     void Start () {
