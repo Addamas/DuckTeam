@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 292f8f7cee1ded148b28dcf13ce5c19a
+timeCreated: 1488284900
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: signs - zeichen 2.0
+  fontNames:
+  - signs - zeichen 2.0
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
