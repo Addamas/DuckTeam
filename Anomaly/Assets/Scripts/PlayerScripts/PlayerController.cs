@@ -6,16 +6,26 @@ public class PlayerController : MonoBehaviour
     public float speed = 6.0F;
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
-    public float mouseSensitivity;
+    public float mouseSensitivity = 1f;
     private Vector3 moveDirection = Vector3.zero;
-    CharacterController controller;
+    [HideInInspector]
+    public CharacterController controller;
+    private Vector3 ColLoc = new Vector3(0, 0, 0);
+    private float height;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        height = controller.height;
     }
 
     void Update ()
+    {
+        Movement();
+        Crouching();
+    }
+
+    public void Movement()
     {
         if (controller.isGrounded)
         {
@@ -30,4 +40,25 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(0, Input.GetAxis("Mouse X")*mouseSensitivity, 0);
     }
+
+    public void Crouching()
+    {
+        if (Input.GetButton("Crouch"))
+        {
+            GetComponent<CharacterController>().height = height / 2;
+            ColLoc.y = -(height / 4);
+            GetComponent<CharacterController>().center = ColLoc;
+        }
+        else if(!Input.GetButton("Crouch") && ColLoc.y < 0)
+        {
+            if (!Physics.Raycast(transform.position, transform.up, height) && !Input.GetButton("Crouch"))
+            {
+                GetComponent<CharacterController>().height = height;
+                ColLoc.y = 0;
+                GetComponent<CharacterController>().center = ColLoc;
+            }
+        }
+    }
+
+
 }
