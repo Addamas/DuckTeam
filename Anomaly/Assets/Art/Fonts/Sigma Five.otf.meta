@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5a7c86e021e6daa41a99ddb32f75081e
+timeCreated: 1488286474
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sigma Five
+  fontNames:
+  - Sigma Five
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
