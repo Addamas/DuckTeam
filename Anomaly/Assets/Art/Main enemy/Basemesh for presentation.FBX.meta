@@ -1,14 +1,22 @@
 fileFormatVersion: 2
-guid: a29010157f02bb74099e10418c6af92f
+guid: cbb583bda0c0dc64d86815a66ab3144a
+timeCreated: 1488451775
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Box002
+    100004: Torso
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Lijst
-    7400000: Take 001
+    400002: Box002
+    400004: Torso
+    2300000: Box002
+    2300002: Torso
+    3300000: Box002
+    3300002: Torso
+    4300000: Torso
+    4300002: Box002
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -34,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
