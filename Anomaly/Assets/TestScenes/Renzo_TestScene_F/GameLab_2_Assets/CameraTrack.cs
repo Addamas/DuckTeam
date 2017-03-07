@@ -6,33 +6,78 @@ public class CameraTrack : MonoBehaviour {
 
     public Transform[] anchors;
     public Transform[] waypoints;
-    public int count = 1;
+    private Transform startMarker, endMarker;
+    private int currentStartPoint;
 
+    private float travelLength;
+    private float startTime;
+    public float speed = 1f;
+
+    public bool switchz;
+
+    public int count;
     public float turnSpeed = 0.1F;
-    public float moveSpeed = 1f;
-    public float travelTime;
-    //private float travelLength;
 
     void Start () {
-        //journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
-        //travelTime = Time.time;
-        transform.LookAt(anchors[0].transform);
+        currentStartPoint = 0;
+        setWaypoints();
     }
 
-    void Update () {
-        float travelLength = Vector3.Distance(waypoints[count - 1].position, waypoints[count].position);
-        float distCovered = (Time.time - travelTime) * moveSpeed;
-        float travelDuration = distCovered / travelLength;
+    void Update()
+    {
+        float distCovered = (Time.time - startTime) * speed;
+        float fracJourney = distCovered / travelLength;
 
-        transform.rotation = Quaternion.Lerp(anchors[count-1].rotation, anchors[count].rotation, Time.time * turnSpeed);
-        transform.position = Vector3.Lerp(waypoints[0].position, waypoints[1].position, travelDuration);
+        //if (switchz == false)
+        //{
+            transform.rotation = Quaternion.Lerp(anchors[count - 1].rotation, anchors[count].rotation, fracJourney);
+            transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fracJourney);
+        //}
+        //else
+        //{
+        //    //transform.rotation = Quaternion.Lerp(anchors[count].rotation, anchors[count - 1].rotation, fracJourney);
+        //    transform.position = Vector3.Lerp(endMarker.position, startMarker.position, fracJourney);
+        //}
 
-        //= Vector3.Lerp(startMarker.position, endMarker.position, fracJourney);
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Jump"))
         {
-            
-            count++;
+            if (fracJourney >= 1f && currentStartPoint + 1 < waypoints.Length)
+            {
+                //if (switchz == true)
+                //    switchz = false;
+                currentStartPoint++;
+                setWaypoints();
+                //count++;
+            }
         }
-	}
+        #region reverse
+        //if (Input.GetButtonUp("Fire2") || Input.GetButtonUp("Use"))
+        //{
+        //    if (fracJourney >= 1f && currentStartPoint + 1 < waypoints.Length)
+        //    {
+        //        if (switchz == false)
+        //            switchz = true;
+        //        //currentStartPoint--;
+        //        setWaypoints();
+        //        //count++;
+        //    }
+        //}
+        #endregion
+    }
+
+    void setWaypoints()
+    {
+        if (currentStartPoint == waypoints.Length -1)
+        {
+            currentStartPoint = 0;
+            count = 0;
+        }
+        startMarker = waypoints[currentStartPoint];
+        endMarker = waypoints[currentStartPoint + 1];
+        startTime = Time.time;
+        travelLength = Vector3.Distance(startMarker.position, endMarker.position);
+
+        count++;
+    }
 }
 

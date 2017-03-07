@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Anomaly/Assets/Art/Main enemy.meta
+guid: ec96365921e67134097e9c3d4bd86486
+folderAsset: yes
+timeCreated: 1488451761
+=======
 guid: 41bd0ce562c29714fbf6affddcef6871
 folderAsset: yes
 timeCreated: 1488461170
+>>>>>>> 5b8be484875777cb662b1997e793d411db5405a4:Anomaly/Assets/Art/Main enemy.meta
 licenseType: Free
 DefaultImporter:
   userData: 
