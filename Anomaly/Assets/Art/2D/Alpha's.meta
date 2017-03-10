@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Anomaly/Assets/Art/2D/Alpha's.meta
+guid: 275c55e9c16840e428e1eca7d5e9d0e2
+folderAsset: yes
+timeCreated: 1489154274
+=======
 guid: 86e87da74845ea54c8cca0a5b566ea31
 folderAsset: yes
 timeCreated: 1488890966
+>>>>>>> 7716ff0da24c5ff1babd55b8e9f11d627e58de48:Anomaly/Assets/Art/2D/Alpha's.meta
 licenseType: Free
 DefaultImporter:
   userData: 
