@@ -4,10 +4,16 @@ guid: ae65a885ac3443144acbab99ca942f5d
 folderAsset: yes
 timeCreated: 1488461221
 =======
+<<<<<<< HEAD
+guid: ae65a885ac3443144acbab99ca942f5d
+folderAsset: yes
+timeCreated: 1488461221
+=======
 guid: c591ad62d67b25641a9ed9df4a0da527
 folderAsset: yes
 timeCreated: 1488451775
 >>>>>>> 85600b408c707b55bbf71e3fd549c5021429c95c
+>>>>>>> 9c86f3ecd2f1d042d24c3c0a293d034d6fe93d6e
 licenseType: Free
 DefaultImporter:
   userData: 
