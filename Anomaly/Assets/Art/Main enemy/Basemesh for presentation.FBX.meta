@@ -1,25 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 6a66ae661c2afb642a308bfc66d8de05
-=======
-<<<<<<< HEAD
-guid: fd3b941673685e54aa1011268045b12b
-=======
-<<<<<<< HEAD
-guid: cbb583bda0c0dc64d86815a66ab3144a
-timeCreated: 1488451775
-=======
-<<<<<<< HEAD
-guid: fd3b941673685e54aa1011268045b12b
-timeCreated: 1488461221
-=======
-guid: 76a6af2e2d7daef4e95a60d833b317fb
-timeCreated: 1488450989
->>>>>>> d253269373a4e4be91207f92728cce1a4055612e
->>>>>>> 5b8be484875777cb662b1997e793d411db5405a4
-licenseType: Free
->>>>>>> f7e56e77c551c0c10ad30c925bcc5ac650bc5fb0
->>>>>>> 8303f5c8c522bca4af53f48efd5011e1ff96a6c7
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -37,21 +17,7 @@ ModelImporter:
     4300002: Box002
     9500000: //RootNode
   materials:
-<<<<<<< HEAD
     importMaterials: 1
-=======
-    importMaterials: 1
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-    importMaterials: 1
-=======
-    importMaterials: 0
->>>>>>> d253269373a4e4be91207f92728cce1a4055612e
->>>>>>> 5b8be484875777cb662b1997e793d411db5405a4
->>>>>>> f7e56e77c551c0c10ad30c925bcc5ac650bc5fb0
->>>>>>> 8303f5c8c522bca4af53f48efd5011e1ff96a6c7
     materialName: 0
     materialSearch: 1
   animations:
@@ -93,21 +59,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-<<<<<<< HEAD
   importAnimation: 1
-=======
-  importAnimation: 1
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-  importAnimation: 1
-=======
-  importAnimation: 0
->>>>>>> d253269373a4e4be91207f92728cce1a4055612e
->>>>>>> 5b8be484875777cb662b1997e793d411db5405a4
->>>>>>> f7e56e77c551c0c10ad30c925bcc5ac650bc5fb0
->>>>>>> 8303f5c8c522bca4af53f48efd5011e1ff96a6c7
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
