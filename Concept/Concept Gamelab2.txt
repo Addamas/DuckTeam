@@ -1,5 +1,6 @@
 phone features;
 options	- MapApp - messages(WhosApp) - heartbeat - picture album - infrared camera - notebook (diary) - Flashlight(gaat de batterij sneller van leeg)
+QuickSelectApp
 Optional~ Duckhunt - (Cheats unlockable)
 
 focus;
