@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 6a66ae661c2afb642a308bfc66d8de05
-=======
 guid: 76a6af2e2d7daef4e95a60d833b317fb
->>>>>>> 9c86f3ecd2f1d042d24c3c0a293d034d6fe93d6e
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -21,7 +17,7 @@ ModelImporter:
     4300002: Box002
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -44,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

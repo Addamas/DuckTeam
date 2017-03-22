@@ -46,8 +46,15 @@ public class PlayerController : MonoBehaviour
                 speed = crouchSpeed;
             }
             else if (Input.GetButton("Sprint"))
+            {
+                cameraAnimator.speed = 2.5f;
                 speed = sprintSpeed;
-            else speed = walkSpeed;
+            }
+            else
+            {
+                speed = walkSpeed;
+                cameraAnimator.speed = 1;
+            } 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
