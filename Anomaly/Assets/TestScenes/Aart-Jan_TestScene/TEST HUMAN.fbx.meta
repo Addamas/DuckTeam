@@ -1,31 +1,24 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 76a6af2e2d7daef4e95a60d833b317fb
-=======
-<<<<<<< HEAD
-guid: 6a66ae661c2afb642a308bfc66d8de05
-=======
-guid: fd3b941673685e54aa1011268045b12b
->>>>>>> 249b5d0fc1bab149cc668472794862e01c138816
->>>>>>> b8a96580c52e9003ff2993ec8c392f139ae5eba0
+guid: b82b7c8f782e3b74991616dee9abb41d
+timeCreated: 1489147508
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Box002
-    100004: Torso
-    400000: //RootNode
-    400002: Box002
-    400004: Torso
-    2300000: Box002
-    2300002: Torso
-    3300000: Box002
-    3300002: Torso
-    4300000: Torso
-    4300002: Box002
-    9500000: //RootNode
+    100000: high-polyMesh
+    100002: male1591Mesh
+    100004: //RootNode
+    400000: high-polyMesh
+    400002: male1591Mesh
+    400004: //RootNode
+    2300000: high-polyMesh
+    2300002: male1591Mesh
+    3300000: high-polyMesh
+    3300002: male1591Mesh
+    4300000: male1591Mesh
+    4300002: high-polyMesh
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -86,7 +79,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
