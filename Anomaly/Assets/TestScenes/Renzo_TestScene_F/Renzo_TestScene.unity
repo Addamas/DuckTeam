@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 1270928266}
   - component: {fileID: 1270928265}
   - component: {fileID: 1270928264}
+  - component: {fileID: 1270928268}
   - component: {fileID: 1270928263}
   - component: {fileID: 1270928267}
   m_Layer: 0
@@ -390,3 +391,16 @@ MonoBehaviour:
   playerTracker: {fileID: 4573561461968752, guid: 0eb9741c3f170ad479c15f7aaa2b8064,
     type: 2}
   trckr: {fileID: 0}
+  distReq: 10
+--- !u!65 &1270928268
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270928262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7098055, y: 1, z: 0.25829658}
+  m_Center: {x: 1.4475496, y: 0, z: -0.58734465}

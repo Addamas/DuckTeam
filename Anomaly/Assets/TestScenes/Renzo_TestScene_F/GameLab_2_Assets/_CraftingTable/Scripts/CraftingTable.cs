@@ -6,7 +6,7 @@ public class CraftingTable : MonoBehaviour {
     public PlayerControllr playerScript;
     public CamControllr camScript;
 
-    public Transform mouseFollowr;
+    private Transform mouseFollowr;
     public Text textUse;
     public Transform tableManager;
     public Transform craftButton;
@@ -17,13 +17,14 @@ public class CraftingTable : MonoBehaviour {
     public Sprite pickAxeResult;
     public Sprite[] axeRecipe;
     public Sprite axeResult;
-
-    // Use this for initialization
+    
     void Start () {
         mouseFollowr = GameObject.Find("MouseFollowr").transform;
         craftButton.GetChild(0).GetComponent<Text>().text = "Check for recipe's";
     }
 
+    #region OnTriggers
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -58,6 +59,7 @@ public class CraftingTable : MonoBehaviour {
             camScript.mayLook = true;
         }
     }
+    #endregion
 
     public void OnClick()
     {//functie voor de craft button;
