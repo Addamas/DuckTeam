@@ -6,8 +6,7 @@ public class SlotActions : MonoBehaviour {
 
     public Transform mouseFollowr;
     public Sprite mouseSprite;
-    public Sprite slotSprite;
-    // Use this for initialization
+
     void Start () {
         mouseFollowr = GameObject.Find("MouseFollowr").transform;
     }
@@ -15,7 +14,7 @@ public class SlotActions : MonoBehaviour {
     public void OnClick()
     { //is de muis niet leeg, en
         if (mouseFollowr.GetComponent<Image>().sprite != null)
-        {   // is de slot zelf wel leeg, maak van de slot zen sprite en muis sprite en maak de muis leeg en inactive; 
+        {   // is de slot zelf wel leeg, maak van de slot sprite de muis sprite en maak de muis leeg en inactive; 
             if (GetComponent <Image>().sprite == null)
             {
                 GetComponent<Image>().sprite = mouseFollowr.GetComponent<Image>().sprite;
@@ -27,7 +26,10 @@ public class SlotActions : MonoBehaviour {
                 Sprite temp = GetComponent<Image>().sprite;
                 GetComponent<Image>().sprite = mouseFollowr.GetComponent<Image>().sprite;
                 mouseFollowr.GetComponent<Image>().sprite = temp;
-                mouseFollowr.GetComponent<Image>().enabled = true;
+                if (mouseFollowr.GetComponent<Image>().enabled == false)
+                {
+                    mouseFollowr.GetComponent<Image>().enabled = true;
+                }
             }
         }//is de muis zelf leeg, en de slot niet dan krijgt de muis de sprite van de slot en die wordt leeg dan;
         else if (mouseFollowr.GetComponent<Image>().sprite == null)
@@ -36,7 +38,10 @@ public class SlotActions : MonoBehaviour {
             {
                 mouseFollowr.GetComponent<Image>().sprite = GetComponent<Image>().sprite;
                 GetComponent<Image>().sprite = null;
-                mouseFollowr.GetComponent<Image>().enabled = true;
+                if (mouseFollowr.GetComponent<Image>().enabled == false)
+                {
+                    mouseFollowr.GetComponent<Image>().enabled = true;
+                }
             }
         }
     }

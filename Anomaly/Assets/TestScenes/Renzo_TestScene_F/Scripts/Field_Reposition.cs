@@ -12,24 +12,15 @@ public class Field_Reposition : MonoBehaviour {
 
     Vector3 enterPos;
     public Transform playerB;
-    private Quaternion playerRot;
     public Transform playerTracker;
     public Transform trckr;
-
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
+    public int distReq = 10;
 
     void OnTriggerEnter(Collider onEnter)
     {
         if (onEnter.transform.tag == "Player")
         {
             enterPos = playerB.position;
-            //playerRot = playerB.rotation;
             trckr = Instantiate(playerTracker, playerB.position, playerB.rotation, this.transform);
             Debug.Log("Player entered field");
         }
@@ -39,11 +30,11 @@ public class Field_Reposition : MonoBehaviour {
     {
         if (onStay.transform.tag == "Player")
         {
-            trckr.position = new Vector3(enterPos.x, enterPos.y, playerB.position.z);
+            trckr.position = new Vector3(enterPos.x, enterPos.y, enterPos.z);
             float dist = Vector3.Distance(playerB.position, trckr.position);
-            if (dist >= 10)
+            if (dist >= distReq)
             {
-                playerB.position = new Vector3 (enterPos.x, enterPos.y, enterPos.z);
+                playerB.position = trckr.position;
                 playerB.rotation = Quaternion.Inverse(trckr.rotation);
             }
         }
