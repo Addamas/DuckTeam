@@ -46,7 +46,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.8308824, g: 0.8553201, b: 0.8553201, a: 1}
     - first:
         name: _HueVariation
       second: {r: 1, g: 0.5, b: 0, a: 0.1}
