@@ -10,43 +10,29 @@ Material:
   m_Shader: {fileID: 14000, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: EFFECT_BUMP EFFECT_HUE_VARIATION GEOM_TYPE_BRANCH
   m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _BumpMap
-      second:
-        m_Texture: {fileID: 2800000, guid: c8244245431b2da49a4b00c9a77cb8a6, type: 3}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 7a84adbf16be830438cf9d31cb113383, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailTex
-      second:
+    - _DetailTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 2800000, guid: 31d0379924f462b4c8807571d6b22d5e, type: 3}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: aaa6cef6a028cbc45928107bf21edba8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - first:
-        name: _Cull
-      second: 2
-    - first:
-        name: _Cutoff
-      second: 0.33
-    - first:
-        name: _WindQuality
-      second: 3
+    - _Cull: 2
+    - _Cutoff: 0.33
+    - _WindQuality: 3
     m_Colors:
-    - first:
-        name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _HueVariation
-      second: {r: 1, g: 0.5, b: 0, a: 0.1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
