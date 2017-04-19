@@ -1,53 +1,38 @@
 fileFormatVersion: 2
 guid: eeae0702b2b709c4c824aff45a3dc74b
-timeCreated: 1490343890
-licenseType: Free
 SpeedTreeImporter:
   serializedVersion: 4
-  mainColor: {r: 0.72794116, g: 0.72794116, b: 0.72794116, a: 1}
-  hueVariation: {r: 0.5514706, g: 0.3402786, b: 0.072988756, a: 0.1}
+  mainColor: {r: 1, g: 1, b: 1, a: 1}
+  hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
   alphaTestRef: 0.33
   bestWindQuality: 3
   hasBillboard: 1
   lODSettings:
-<<<<<<< HEAD
-  - height: 0.89650697
-=======
-  - height: 0.60323876
->>>>>>> 7b416ebcbe044777672c6e5683beaaf806b70275
+  - height: 0.89944816
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
     reflectionProbeUsage: 1
     enableBump: 1
     enableHue: 1
-    windQuality: 2
-<<<<<<< HEAD
-  - height: 0.60323876
-    castShadows: 1
-=======
-  - height: 0.3801938
-    castShadows: 0
->>>>>>> 7b416ebcbe044777672c6e5683beaaf806b70275
-    receiveShadows: 1
-    useLightProbes: 1
-    reflectionProbeUsage: 1
-    enableBump: 1
-    enableHue: 1
-    windQuality: 2
-<<<<<<< HEAD
-  - height: 0.2977264
-=======
-  - height: 0.19733138
->>>>>>> 7b416ebcbe044777672c6e5683beaaf806b70275
+    windQuality: 4
+  - height: 0.71267647
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
     reflectionProbeUsage: 1
     enableBump: 1
     enableHue: 1
-    windQuality: 2
-  - height: 0.006933255
+    windQuality: 4
+  - height: 0.50760156
+    castShadows: 1
+    receiveShadows: 1
+    useLightProbes: 1
+    reflectionProbeUsage: 1
+    enableBump: 1
+    enableHue: 1
+    windQuality: 4
+  - height: 0.01
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 0
@@ -60,7 +45,7 @@ SpeedTreeImporter:
   billboardTransitionCrossFadeWidth: 0.25
   fadeOutWidth: 0.25
   scaleFactor: 0.3048
-  materialVersion: 2
+  materialVersion: 3
   userData: 
   assetBundleName: 
   assetBundleVariant: 
