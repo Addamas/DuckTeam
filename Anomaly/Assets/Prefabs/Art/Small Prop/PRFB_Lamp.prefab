@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4770091770344436}
   - component: {fileID: 33486011296488552}
   - component: {fileID: 23400379606532882}
-  - component: {fileID: 114420223790207124}
   m_Layer: 0
   m_Name: PRFB_Lamp
   m_TagString: Untagged
@@ -74,6 +73,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33486011296488552
 MeshFilter:
@@ -82,16 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1780003281156506}
   m_Mesh: {fileID: 4300000, guid: 1e9bb807d1f28fe4694c11cd5a6d277e, type: 3}
---- !u!114 &114420223790207124
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1780003281156506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24f867e04f5151b4fb4b23402b993299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotDir: {x: 0, y: -1, z: 0}
-  rotSpeed: 20
