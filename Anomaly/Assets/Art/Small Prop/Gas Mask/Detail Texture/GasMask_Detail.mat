@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: No Name
+  m_Name: GasMask_Detail
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
-  m_LightmapFlags: 1
+  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -18,7 +18,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 497441fd2d22d72409e67b359dcb2084, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9a82277c72609fb439310629129ffd78, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -38,11 +38,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7062ffe6e71aa394db33bbb1941e3a81, type: 3}
+        m_Texture: {fileID: 2800000, guid: 30849cd82a619424c92873667217835a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: e823367edb477d34b9be9c999602c535, type: 3}
+        m_Texture: {fileID: 2800000, guid: cc0136585f22f964b95016a3128d84e3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:

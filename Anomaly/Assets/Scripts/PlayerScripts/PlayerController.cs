@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float crouchSpeed;
     public float gravity = 20.0F;
     public float mouseSensitivity = 1f;
+    public float rayCastMaxDistance;
     private Vector3 moveDirection = Vector3.zero;
     public Vector3 cameraPosition;
     public Vector3 crouchCameraPosition;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Animator cameraAnimator;
     private float height;
+    RaycastHit hit;
 
     void Start()
     {
@@ -35,6 +37,16 @@ public class PlayerController : MonoBehaviour
         Movement();
         Crouching();
         Bobbing();
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayCastMaxDistance))
+        {
+            if (hit.collider.tag == "Interactable")
+            {
+                if (Input.GetButtonDown("Use"))
+                {
+                    hit.transform.GetComponent<ScriptedEvent>().Action();
+                }
+            }
+        }
     }
 
     public void Movement()
