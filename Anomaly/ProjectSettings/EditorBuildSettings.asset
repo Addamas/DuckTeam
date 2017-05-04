@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TestScenes/Aart-Jan_TestScene.unity
+    guid: 16e0b40379fb2474dbc0d7a026c177ed
