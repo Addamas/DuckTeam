@@ -10,6 +10,8 @@ public class ScriptedEvent : MonoBehaviour {
     float startTime;
     float journeyLength;
     GameObject player;
+    enum EventType { movingObject, other};
+    public EventType eventType;
 
     void Start()
     {
@@ -20,10 +22,17 @@ public class ScriptedEvent : MonoBehaviour {
 
     public void Action()
     {
-        StartCoroutine("StartEvent");
+        switch (eventType)
+        {
+            case EventType.movingObject:
+                StartCoroutine("StartMoving");
+                break;
+            case EventType.other:
+                break;
+        }
     }
 
-    public IEnumerator StartEvent()
+    public IEnumerator StartMoving()
     {
         while(Vector3.Distance(transform.position, endPos.position) > 0.001f)
         {
