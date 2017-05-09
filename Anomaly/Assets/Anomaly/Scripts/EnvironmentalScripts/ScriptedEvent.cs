@@ -10,7 +10,7 @@ public class ScriptedEvent : MonoBehaviour {
     float startTime;
     float journeyLength;
     GameObject player;
-    enum EventType { movingObject, other};
+    public enum EventType { movingObject, other};
     public EventType eventType;
 
     void Start()
