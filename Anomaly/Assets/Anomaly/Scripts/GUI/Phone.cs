@@ -13,13 +13,31 @@ public class Phone : MonoBehaviour
         [Range(0f,100f)]
         public float battery = 100f;
         public float batteryDrain = 0.25f;
+        public float normalBatteryDrain = 0.25f;
+        public float fastBatteryDrain = 1f;
         public Image batteryWarning;
+        public Image batteryFill;
         public bool firstWarning;
         public bool secondWarning;
+        public Text batteryCount;
+        public bool goFaster;
 
         public void BatteryDrain()
         {
+            if (goFaster)
+            {
+                batteryDrain = fastBatteryDrain;
+            }
+            else
+            {
+                batteryDrain = normalBatteryDrain;
+            }
             battery -= batteryDrain * Time.deltaTime;
+            float dr = 1;
+            dr = dr / battery * batteryDrain;
+            batteryFill.fillAmount -= dr * Time.deltaTime;
+            int b = (int) battery;
+            batteryCount.text = b.ToString() + "%";
             BatteryWarning();
         }
 
@@ -29,6 +47,7 @@ public class Phone : MonoBehaviour
             {
                 dead = true;
                 battery = 0f;
+                print("DEAD");
                 return;
             }
 
@@ -93,13 +112,19 @@ public class Phone : MonoBehaviour
             //Back to homescreen
             pages[i].SetActive(true);
             pages[openScreen].SetActive(false);
+            goFaster = false;
         }
         else
         {
             pages[9].SetActive(false);
             pages[i].SetActive(true);
             openScreen = i;
+            if(i == 4 || i == 5)
+            {
+                goFaster = true;
+            }
         }
+    }
         /*
         switch (i)
         {
@@ -132,5 +157,4 @@ public class Phone : MonoBehaviour
                 break;
         }
         */
-    }
 }
