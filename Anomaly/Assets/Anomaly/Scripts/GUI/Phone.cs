@@ -34,8 +34,10 @@ public class Phone : MonoBehaviour
             }
             battery -= batteryDrain * Time.deltaTime;
             float dr = 1;
-            dr = dr / battery * batteryDrain;
-            batteryFill.fillAmount -= dr * Time.deltaTime;
+        // dr = dr / battery * batteryDrain;
+            dr = battery/100;
+            batteryFill.fillAmount = dr;
+            //batteryFill.fillAmount -= dr * Time.deltaTime;
             int b = (int) battery;
             batteryCount.text = b.ToString() + "%";
             BatteryWarning();
