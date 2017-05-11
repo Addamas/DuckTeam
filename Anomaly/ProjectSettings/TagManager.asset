@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Phone
+  - ChargePoint
   layers:
   - Default
   - TransparentFX
