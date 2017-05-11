@@ -21,6 +21,7 @@ public class Phone : MonoBehaviour
         public bool secondWarning;
         public Text batteryCount;
         public bool goFaster;
+        public bool empty;
 
         public void BatteryDrain()
         {
@@ -34,10 +35,8 @@ public class Phone : MonoBehaviour
             }
             battery -= batteryDrain * Time.deltaTime;
             float dr = 1;
-        // dr = dr / battery * batteryDrain;
             dr = battery/100;
             batteryFill.fillAmount = dr;
-            //batteryFill.fillAmount -= dr * Time.deltaTime;
             int b = (int) battery;
             batteryCount.text = b.ToString() + "%";
             BatteryWarning();
@@ -49,33 +48,43 @@ public class Phone : MonoBehaviour
             {
                 dead = true;
                 battery = 0f;
-                print("DEAD");
+                print("BATTERY DEAD");
+                empty = true;
+                phoneScreen.SetActive(false);
                 return;
             }
-
-            if (battery > 9.5f && battery < 10.5f)
-            {
-                if (!secondWarning)
-                {
-                    batteryWarning.gameObject.SetActive(true);
-                    secondWarning = true;
-                }
-            }
-
-            else if (battery > 19.5f && battery < 20.5f)
+            if(battery < 25f)
             {
                 if (!firstWarning)
                 {
-                    batteryWarning.gameObject.SetActive(true);
                     firstWarning = true;
+                    StartCoroutine(Warn());
+                }
+                else if(battery < 10 && !secondWarning)
+                {
+                    secondWarning = true;
+                    StartCoroutine(Warn());
                 }
             }
+        }
+        IEnumerator Warn()
+        {
+            batteryWarning.gameObject.SetActive(true);
+            yield return new WaitForSeconds(5);
+            batteryWarning.gameObject.SetActive(false);
         }
     #endregion
 
     public Text time;
     public GameObject[] pages; //0 = Messages, 1 = Notes, 2 = Map, 3 = Gallery, 4 = Camera, 5 = Flashlight, 6 = MiniGame, 7 = Insanity, 8 = Options, 9 = Homescreen
+    public Animator[] anims; //0 = Messages, 1 = Notes, 2 = Options, 3 = Flashlight, 4 = Camera
     int openScreen;
+    public float insanity = 0f;
+    public float bgFill;
+    public bool[] insaneChecks;
+    public float insaneBoost;
+    public Image insaneFill;
+    public GameObject phoneScreen;
 
     public void Start()
     {
@@ -86,8 +95,61 @@ public class Phone : MonoBehaviour
 
     public void Update()
     {
-        if(!dead)
+        if (!dead)
+        {
             BatteryDrain();
+            InsanityRaise();
+        }
+    }
+
+    public void InsanityRaise()
+    {
+        insanity += insaneBoost * Time.deltaTime;
+        bgFill -= insaneBoost * Time.deltaTime;
+        float dr = 1;
+        dr = bgFill / 100;
+        insaneFill.fillAmount = dr;
+        InsanityCheck();
+    }
+
+    public void InsanityCheck()
+    {
+        if(insanity >= 100)
+        {
+            insaneChecks[3] = true;
+            print("DEAD");
+            return;
+        }
+        if(insanity >= 75)
+        {
+            print("Insanity Check2");
+            insaneChecks[2] = true;
+            anims[3].SetBool("Insane", true);
+            anims[4].SetBool("Insane", true);
+            return;
+        }
+        if(insanity >= 50)
+        {
+            print("Insanity Check1");
+            insaneChecks[1] = true;
+            anims[1].SetBool("Insane", true);
+            return;
+        }
+        if(insanity >= 25)
+        {
+            print("Insanity Check0");
+            insaneChecks[0] = true;
+            anims[0].SetBool("Insane", true);
+            anims[2].SetBool("Insane", true);
+            return;
+        }
+        else
+        {
+            for(int i = 0; i < anims.Length; i++)
+            {
+                anims[i].SetBool("Insane", false);
+            }
+        }
     }
 
     IEnumerator TimeCheck (float delay)
