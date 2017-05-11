@@ -1,17 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
 guid: f17ebf756bb28d342873492d76b79819
-timeCreated: 1494332165
-=======
-guid: b68853a3dea29354eab446c7256334af
-timeCreated: 1494332223
->>>>>>> d7186d88cd3fafbbda26556b45f549c7cbafedfb
-=======
-guid: a0152bde951d2a84abdc179469004f4d
-timeCreated: 1494332370
->>>>>>> 39b9b82a49677272425bd6d9b92d74099b083c51
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4
@@ -37,19 +25,11 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-<<<<<<< HEAD
     filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
-=======
-    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: -1
   nPOTScale: 0
->>>>>>> 39b9b82a49677272425bd6d9b92d74099b083c51
   lightmap: 0
   compressionQuality: 50
   spriteMode: 0
@@ -62,11 +42,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-<<<<<<< HEAD
-  textureType: 0
-=======
   textureType: 8
->>>>>>> 39b9b82a49677272425bd6d9b92d74099b083c51
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
@@ -80,8 +56,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-<<<<<<< HEAD
-=======
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
@@ -90,7 +64,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
->>>>>>> 39b9b82a49677272425bd6d9b92d74099b083c51
   spriteSheet:
     serializedVersion: 2
     sprites: []

@@ -1,25 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
 guid: f940836a50b8e1d499502ff9ff642b81
-timeCreated: 1494332165
-=======
-guid: 88baaa8cb2527df4aa6edf155a1ce9dc
-timeCreated: 1494332223
->>>>>>> d7186d88cd3fafbbda26556b45f549c7cbafedfb
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
-=======
-guid: 00ebdfcd66e05c5419d6c2a9ce5165d8
-timeCreated: 1494332631
-licenseType: Free
-TextureImporter:
-  fileIDToRecycleName:
-    21300000: FlashlightInsanitySheet_0
-    21300002: FlashlightInsanitySheet_1
-    21300004: FlashlightInsanitySheet_2
->>>>>>> 39b9b82a49677272425bd6d9b92d74099b083c51
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -43,25 +25,14 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-<<<<<<< HEAD
     filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
-  lightmap: 0
-  compressionQuality: 50
-  spriteMode: 0
-=======
-    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
->>>>>>> 39b9b82a49677272425bd6d9b92d74099b083c51
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,11 +42,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-<<<<<<< HEAD
-  textureType: 0
-=======
   textureType: 8
->>>>>>> 39b9b82a49677272425bd6d9b92d74099b083c51
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
@@ -89,11 +56,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-<<<<<<< HEAD
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-=======
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
@@ -104,47 +66,7 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: FlashlightInsanitySheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: FlashlightInsanitySheet_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: FlashlightInsanitySheet_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
->>>>>>> 39b9b82a49677272425bd6d9b92d74099b083c51
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 

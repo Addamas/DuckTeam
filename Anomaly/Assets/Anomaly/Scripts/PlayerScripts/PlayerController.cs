@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float gravity = 20.0F;
     public float mouseSensitivity = 1f;
     public float rayCastMaxDistance;
+    IEnumerator getupCoroutine;
+    IEnumerator crouchCoroutine;
     private Vector3 moveDirection = Vector3.zero;
     public Vector3 cameraPosition;
     public Vector3 crouchCameraPosition;
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         cameraAnimator = GameObject.Find("CameraHolder").GetComponent<Animator>();
+        getupCoroutine = GetUp();
+        crouchCoroutine = Crouch();
         controller = GetComponent<CharacterController>();
         playerCamera = Camera.main.gameObject;
         height = controller.height;
@@ -101,7 +105,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<CharacterController>().height = height / 2;
             ColLoc.y = -(height / 4);
             GetComponent<CharacterController>().center = ColLoc;
-            StartCoroutine("Crouch");
+            StartCoroutine(crouchCoroutine);
         }
         else if(!Input.GetButton("Crouch") && playerCamera.transform.localPosition != cameraPosition)
         {
@@ -110,7 +114,7 @@ public class PlayerController : MonoBehaviour
                 GetComponent<CharacterController>().height = height;
                 ColLoc.y = 0;
                 GetComponent<CharacterController>().center = ColLoc;
-                StartCoroutine("GetUp");
+                StartCoroutine(getupCoroutine);
             }
         }
     }
@@ -119,7 +123,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerCamera.transform.localPosition == cameraPosition)
         {
-            StopAllCoroutines();
+            StopCoroutine(getupCoroutine);
         }
         playerCamera.transform.localPosition = Vector3.MoveTowards(playerCamera.transform.localPosition, cameraPosition, 3f * Time.deltaTime);
         yield return new WaitForSeconds(0.2f);
@@ -129,7 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerCamera.transform.localPosition == crouchCameraPosition)
         {
-            StopAllCoroutines();
+            StopCoroutine(crouchCoroutine);
         }
         playerCamera.transform.localPosition = Vector3.MoveTowards(playerCamera.transform.localPosition, crouchCameraPosition, 3f * Time.deltaTime);
         yield return new WaitForSeconds(0.2f);

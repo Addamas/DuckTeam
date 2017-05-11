@@ -5,19 +5,26 @@ using UnityEngine.UI;
 
 public class Opening : MonoBehaviour {
 
-    public GameObject sprite;
-    float alpha;
+    public float alpha;
+    public float endalpha;
+    public Color color;
 
 	// Use this for initialization
 	void Start () {
-        sprite = GameObject.Find("BlackBG");
-        FadeFromBlack();
-	}
-	
-	// Update is called once per frame
-	void FadeFromBlack () {
-        //sprite.GetComponent<Image>().GetComponent<Color>().a = alpha;
-        alpha = Mathf.Lerp(1, 0, 1 * Time.deltaTime);
+        color = GameObject.Find("BlackBG").GetComponent<Image>().color;
+        endalpha = 0;
+        StartCoroutine("FadeFromBlack");
 
+	}
+
+	// Update is called once per frame
+	public IEnumerator FadeFromBlack () {
+        while (color.a != endalpha)
+        {
+            color.a = Mathf.Lerp(color.a, 0, .3f * Time.deltaTime);
+            GameObject.Find("BlackBG").GetComponent<Image>().color = color;
+            yield return new WaitForEndOfFrame();
+        }
+        yield break;
     }
 }
