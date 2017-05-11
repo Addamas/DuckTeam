@@ -18,7 +18,6 @@ public class ScriptedEvent : MonoBehaviour {
 
     void Start()
     {
-        if (GetComponent<Light>())
         player = GameObject.FindGameObjectWithTag("Player");
         startTime = Time.time;
         journeyLength = Vector3.Distance(startPos.position, endPos.position);
@@ -52,20 +51,22 @@ public class ScriptedEvent : MonoBehaviour {
         yield break;
     }
 
-    public IEnumerator FlickeringLight()
+    public void Update()
     {
-        if (Time.time > changeTime)
+        if (GetComponent<Light>())
         {
-            GetComponent<Light>().enabled = !GetComponent<Light>().enabled;
-            if (GetComponent<Light>().enabled)
+            if (Time.time > changeTime)
             {
-                changeTime = Time.time + timeOn;
+                GetComponent<Light>().enabled = !GetComponent<Light>().enabled;
+                if (GetComponent<Light>().enabled)
+                {
+                    changeTime = Time.time + timeOn;
+                }
+                else
+                {
+                    changeTime = Time.time + timeOff;
+                }
             }
-            else
-            {
-                changeTime = Time.time + timeOff;
-            }
-        }
-        yield return new WaitForSeconds(0.2f);
+        }   
     }
 }

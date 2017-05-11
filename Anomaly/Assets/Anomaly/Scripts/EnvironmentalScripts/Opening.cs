@@ -21,7 +21,6 @@ public class Opening : MonoBehaviour {
 	public IEnumerator FadeFromBlack () {
         while (color.a != endalpha)
         {
-            print(color.a);
             color.a = Mathf.Lerp(color.a, 0, .3f * Time.deltaTime);
             GameObject.Find("BlackBG").GetComponent<Image>().color = color;
             yield return new WaitForEndOfFrame();
