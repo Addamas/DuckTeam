@@ -75,7 +75,13 @@ public class Phone : MonoBehaviour
 
     public Text time;
     public GameObject[] pages; //0 = Messages, 1 = Notes, 2 = Map, 3 = Gallery, 4 = Camera, 5 = Flashlight, 6 = MiniGame, 7 = Insanity, 8 = Options, 9 = Homescreen
+    public Animator[] anims; //0 = Messages, 1 = Notes, 2 = Options
     int openScreen;
+    public float insanity = 0f;
+    public float bgFill;
+    public bool[] insaneChecks;
+    public float insaneBoost;
+    public Image insaneFill;
 
     public void Start()
     {
@@ -86,8 +92,59 @@ public class Phone : MonoBehaviour
 
     public void Update()
     {
-        if(!dead)
+        if (!dead)
+        {
             BatteryDrain();
+            InsanityRaise();
+        }
+    }
+
+    public void InsanityRaise()
+    {
+        insanity += insaneBoost * Time.deltaTime;
+        bgFill -= insaneBoost * Time.deltaTime;
+        float dr = 1;
+        dr = bgFill / 100;
+        insaneFill.fillAmount = dr;
+        InsanityCheck();
+    }
+
+    public void InsanityCheck()
+    {
+        if(insanity >= 100)
+        {
+            insaneChecks[3] = true;
+            print("DEAD");
+            return;
+        }
+        if(insanity >= 75)
+        {
+            print("Insanity Check2");
+            insaneChecks[2] = true;
+            return;
+        }
+        if(insanity >= 50)
+        {
+            print("Insanity Check1");
+            insaneChecks[1] = true;
+            anims[1].SetBool("Insane", true);
+            return;
+        }
+        if(insanity >= 25)
+        {
+            print("Insanity Check0");
+            insaneChecks[0] = true;
+            anims[0].SetBool("Insane", true);
+            anims[2].SetBool("Insane", true);
+            return;
+        }
+        else
+        {
+            for(int i = 0; i < anims.Length; i++)
+            {
+                anims[i].SetBool("Insane", false);
+            }
+        }
     }
 
     IEnumerator TimeCheck (float delay)
