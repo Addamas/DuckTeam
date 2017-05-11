@@ -16,7 +16,7 @@ public class Opening : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FadeFromBlack () {
-        sprite.GetComponent<Image>().GetComponent<Color>().a = alpha;
+        //sprite.GetComponent<Image>().GetComponent<Color>().a = alpha;
         alpha = Mathf.Lerp(1, 0, 1 * Time.deltaTime);
 
     }
