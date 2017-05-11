@@ -14,13 +14,14 @@ public class Opening : MonoBehaviour {
         color = GameObject.Find("BlackBG").GetComponent<Image>().color;
         endalpha = 0;
         StartCoroutine("FadeFromBlack");
-
-	}
+        Destroy(gameObject, 15);
+    }
 
 	// Update is called once per frame
 	public IEnumerator FadeFromBlack () {
         while (color.a != endalpha)
         {
+            print(color.a);
             color.a = Mathf.Lerp(color.a, 0, .3f * Time.deltaTime);
             GameObject.Find("BlackBG").GetComponent<Image>().color = color;
             yield return new WaitForEndOfFrame();
