@@ -4482,6 +4482,7 @@ MonoBehaviour:
   secondWarning: 0
   batteryCount: {fileID: 637197742}
   goFaster: 0
+  empty: 0
   time: {fileID: 265493942}
   pages:
   - {fileID: 561493943}
@@ -4498,11 +4499,14 @@ MonoBehaviour:
   - {fileID: 163525215}
   - {fileID: 1227569718}
   - {fileID: 1044709195}
+  - {fileID: 1273061878}
+  - {fileID: 1762136985}
   insanity: 0
   bgFill: 100
   insaneChecks: 00000000
   insaneBoost: 0
   insaneFill: {fileID: 1758038699}
+  phoneScreen: {fileID: 1106142913}
 --- !u!114 &1096863992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5366,6 +5370,7 @@ GameObject:
   - component: {fileID: 1273061877}
   - component: {fileID: 1273061876}
   - component: {fileID: 1273061875}
+  - component: {fileID: 1273061878}
   m_Layer: 8
   m_Name: Flashlight
   m_TagString: Untagged
@@ -5480,6 +5485,23 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1273061873}
+--- !u!95 &1273061878
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1273061873}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a650f1a99016d644b468c9b10437ba1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1278440752
 GameObject:
   m_ObjectHideFlags: 0
@@ -7598,6 +7620,7 @@ GameObject:
   - component: {fileID: 1762136984}
   - component: {fileID: 1762136983}
   - component: {fileID: 1762136982}
+  - component: {fileID: 1762136985}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
@@ -7712,6 +7735,23 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1762136980}
+--- !u!95 &1762136985
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762136980}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1cfa0a066426084babde841676c9da3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1772445669 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1379519938459690, guid: 738fc363a2ade874c9b48467726fc1d6,
