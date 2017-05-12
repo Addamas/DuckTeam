@@ -14,8 +14,8 @@ public class Opening : MonoBehaviour {
         color = GameObject.Find("BlackBG").GetComponent<Image>().color;
         endalpha = 0;
         StartCoroutine("FadeFromBlack");
-
-	}
+        Destroy(gameObject, 15);
+    }
 
 	// Update is called once per frame
 	public IEnumerator FadeFromBlack () {
