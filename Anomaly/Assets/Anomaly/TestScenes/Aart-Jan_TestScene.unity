@@ -4810,6 +4810,16 @@ MonoBehaviour:
   goFaster: 0
   empty: 0
   chargeSpeed: 2
+  insanity: 0
+  bgFill: 100
+  insaneChecks: 00000000
+  insaneBoost: 0
+  insaneFill: {fileID: 1758038699}
+  messages: []
+  messagePages:
+  - {fileID: 430934987}
+  messageText:
+  - {fileID: 922498167}
   time: {fileID: 265493942}
   pages:
   - {fileID: 561493943}
@@ -4831,17 +4841,7 @@ MonoBehaviour:
   - {fileID: 2045652267}
   - {fileID: 596862637}
   - {fileID: 1032168910}
-  insanity: 0
-  bgFill: 100
-  insaneChecks: 00000000
-  insaneBoost: 0
-  insaneFill: {fileID: 1758038699}
   phoneScreen: {fileID: 1106142913}
-  messages: []
-  messagePages:
-  - {fileID: 430934987}
-  messageText:
-  - {fileID: 922498167}
   playerName: 
 --- !u!114 &1096863992
 MonoBehaviour:
@@ -10365,6 +10365,10 @@ Prefab:
     - target: {fileID: 4461758399326414, guid: 17c1a7468c50cef469871b34900c7e9b, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160164180303498, guid: 17c1a7468c50cef469871b34900c7e9b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17c1a7468c50cef469871b34900c7e9b, type: 2}
