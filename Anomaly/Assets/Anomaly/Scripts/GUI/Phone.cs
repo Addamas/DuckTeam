@@ -35,25 +35,36 @@ public class Phone : MonoBehaviour
         {
             batteryDrain = normalBatteryDrain;
         }
-        battery -= batteryDrain * Time.deltaTime;
-        float dr = 1;
-        dr = battery / 100;
-        batteryFill.fillAmount = dr;
-        int b = (int)battery;
-        batteryCount.text = b.ToString() + "%";
-        BatteryWarning();
+        if (!empty)
+        {
+            battery -= batteryDrain * Time.deltaTime;
+            float dr = 1;
+            dr = battery / 100;
+            batteryFill.fillAmount = dr;
+            int b = (int)battery;
+            batteryCount.text = b.ToString() + "%";
+            BatteryWarning();
+        }
     }
 
     public void BatteryWarning()
     {
         if (battery <= 0f)
         {
-            dead = true;
-            battery = 0f;
-            print("BATTERY DEAD");
-            empty = true;
-            phoneScreen.SetActive(false);
-            return;
+            if (!empty)
+            {
+                battery = 0f;
+                print("BATTERY DEAD");
+                empty = true;
+                phoneScreen.SetActive(false);
+                return;
+            }
+        }
+        if (battery > 0f && empty)
+        {
+            dead = false;
+            empty = false;
+            phoneScreen.SetActive(true);
         }
         if (battery < 25f)
         {
@@ -102,6 +113,12 @@ public class Phone : MonoBehaviour
     }
     #endregion
     #region Insanity
+    public float insanity = 0f;
+    public float bgFill;
+    public bool[] insaneChecks;
+    public float insaneBoost;
+    public Image insaneFill;
+
     public void InsanityRaise()
     {
         insanity += insaneBoost * Time.deltaTime;
@@ -117,7 +134,7 @@ public class Phone : MonoBehaviour
         if (insanity >= 100)
         {
             insaneChecks[3] = true;
-            print("DEAD");
+            //print("DEAD");
             return;
         }
         if (insanity >= 75)
@@ -156,6 +173,11 @@ public class Phone : MonoBehaviour
     }
     #endregion
     #region Messages
+    public GameObject[] messages;
+    public GameObject[] messagePages;
+    public Text[] messageText;
+    int openMessagePage;
+
     public void PrepareMessages()
     {
         messageText[0].text = "Please... " + playerName + " I know you know, ... Letter you must";
@@ -173,16 +195,7 @@ public class Phone : MonoBehaviour
     public GameObject[] pages; //0 = Messages, 1 = Notes, 2 = Map, 3 = Gallery, 4 = Camera, 5 = Flashlight, 6 = MiniGame, 7 = Insanity, 8 = Options, 9 = Homescreen
     public Animator[] anims; //0 = Messages, 1 = Notes, 2 = Options, 3 = Flashlight, 4 = Camera, 5 = Map, 6 = Gallery, 7  = Inventory
     int openScreen;
-    public float insanity = 0f;
-    public float bgFill;
-    public bool[] insaneChecks;
-    public float insaneBoost;
-    public Image insaneFill;
     public GameObject phoneScreen;
-    public GameObject[] messages;
-    public GameObject[] messagePages;
-    public Text[] messageText;
-    int openMessagePage;
     public string playerName;
 
     public void Start()
@@ -196,11 +209,15 @@ public class Phone : MonoBehaviour
 
     public void Update()
     {
+        BatteryDrain();
+        InsanityRaise();
+        /*
         if (!dead)
         {
             BatteryDrain();
             InsanityRaise();
         }
+        */
     }
     
 
