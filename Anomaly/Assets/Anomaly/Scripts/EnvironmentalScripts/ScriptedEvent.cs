@@ -10,8 +10,11 @@ public class ScriptedEvent : MonoBehaviour {
     float startTime;
     float journeyLength;
     GameObject player;
-    public enum EventType { movingObject, other};
+    public enum EventType { movingObject, flickeringLight, other};
     public EventType eventType;
+    float changeTime;
+    public float timeOn;
+    public float timeOff;
 
     void Start()
     {
@@ -26,6 +29,8 @@ public class ScriptedEvent : MonoBehaviour {
         {
             case EventType.movingObject:
                 StartCoroutine("StartMoving");
+                break;
+            case EventType.flickeringLight:
                 break;
             case EventType.other:
                 break;
@@ -44,5 +49,24 @@ public class ScriptedEvent : MonoBehaviour {
         }
         transform.position = endPos.position;
         yield break;
+    }
+
+    public void Update()
+    {
+        if (GetComponent<Light>())
+        {
+            if (Time.time > changeTime)
+            {
+                GetComponent<Light>().enabled = !GetComponent<Light>().enabled;
+                if (GetComponent<Light>().enabled)
+                {
+                    changeTime = Time.time + timeOn;
+                }
+                else
+                {
+                    changeTime = Time.time + timeOff;
+                }
+            }
+        }   
     }
 }
