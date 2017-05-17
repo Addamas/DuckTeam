@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: a7005f5524723e141a4b2f050e82d2b5
-timeCreated: 1495007469
+guid: 445b993c03c11f04cbcb473847af17f5
+timeCreated: 1494935876
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: CameraInsanitySpriteSheet_0
-    21300002: CameraInsanitySpriteSheet_1
-    21300004: CameraInsanitySpriteSheet_2
-    21300006: CameraInsanitySpriteSheet_3
-    21300008: CameraInsanitySpriteSheet_4
+    21300000: FlashlightInsanityOffSheet_0
+    21300002: FlashlightInsanityOffSheet_1
+    21300004: FlashlightInsanityOffSheet_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -75,7 +73,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CameraInsanitySpriteSheet_0
+      name: FlashlightInsanityOffSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -88,7 +86,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: CameraInsanitySpriteSheet_1
+      name: FlashlightInsanityOffSheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -101,36 +99,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: CameraInsanitySpriteSheet_2
+      name: FlashlightInsanityOffSheet_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: CameraInsanitySpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: CameraInsanitySpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
         y: 0
         width: 64
         height: 64
