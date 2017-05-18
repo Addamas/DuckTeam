@@ -5239,6 +5239,9 @@ MonoBehaviour:
   goFaster: 0
   empty: 0
   chargeSpeed: 2
+  inHand: 1
+  phoneCase: {fileID: 1974161277}
+  phoneCanvas: {fileID: 1058610482}
   insanity: 0
   bgFill: 100
   insaneChecks: 00000000

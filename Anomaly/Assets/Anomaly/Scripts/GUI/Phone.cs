@@ -24,6 +24,9 @@ public class Phone : MonoBehaviour
     public bool goFaster;
     public bool empty;
     public float chargeSpeed;
+    public bool inHand;
+    public GameObject phoneCase;
+    public Canvas phoneCanvas;
 
     public void BatteryDrain()
     {
@@ -212,6 +215,7 @@ public class Phone : MonoBehaviour
     {
         BatteryDrain();
         InsanityRaise();
+        Hand();
         /*
         if (!dead)
         {
@@ -219,6 +223,25 @@ public class Phone : MonoBehaviour
             InsanityRaise();
         }
         */
+    }
+
+    public void Hand()
+    {
+        if (Input.GetButtonDown("Tab"))
+        {
+            if (inHand)
+            {
+                inHand = false;
+                phoneCanvas.GetComponent<Canvas>().enabled = false;
+                phoneCase.GetComponent<MeshRenderer>().enabled = false;
+            }
+            else
+            {
+                inHand = true;
+                phoneCanvas.GetComponent<Canvas>().enabled = true;
+                phoneCase.GetComponent<MeshRenderer>().enabled = true;
+            }
+        }
     }
     
 
