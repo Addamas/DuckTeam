@@ -24,6 +24,9 @@ public class Phone : MonoBehaviour
     public bool goFaster;
     public bool empty;
     public float chargeSpeed;
+    public bool inHand;
+    public GameObject phoneCase;
+    public Canvas phoneCanvas;
 
     public void BatteryDrain()
     {
@@ -194,6 +197,7 @@ public class Phone : MonoBehaviour
     public Text time;
     public GameObject[] pages; //0 = Messages, 1 = Notes, 2 = Map, 3 = Gallery, 4 = Camera, 5 = Flashlight, 6 = MiniGame, 7 = Insanity, 8 = Options, 9 = Homescreen
     public Animator[] anims; //0 = Messages, 1 = Notes, 2 = Options, 3 = Flashlight, 4 = Camera, 5 = Map, 6 = Gallery, 7  = Inventory
+    public GameObject fLight;
     int openScreen;
     public GameObject phoneScreen;
     public string playerName;
@@ -211,6 +215,7 @@ public class Phone : MonoBehaviour
     {
         BatteryDrain();
         InsanityRaise();
+        Hand();
         /*
         if (!dead)
         {
@@ -218,6 +223,25 @@ public class Phone : MonoBehaviour
             InsanityRaise();
         }
         */
+    }
+
+    public void Hand()
+    {
+        if (Input.GetButtonDown("Tab"))
+        {
+            if (inHand)
+            {
+                inHand = false;
+                phoneCanvas.GetComponent<Canvas>().enabled = false;
+                phoneCase.GetComponent<MeshRenderer>().enabled = false;
+            }
+            else
+            {
+                inHand = true;
+                phoneCanvas.GetComponent<Canvas>().enabled = true;
+                phoneCase.GetComponent<MeshRenderer>().enabled = true;
+            }
+        }
     }
     
 
@@ -248,12 +272,27 @@ public class Phone : MonoBehaviour
             messagePages[openMessagePage].SetActive(false);
             goFaster = false;
         }
+        else if(i == 5)
+        {
+            if (anims[3].GetBool("On"))
+            {
+                anims[3].SetBool("On", false);
+                fLight.SetActive(false);
+                goFaster = false;
+            }
+            else
+            {
+                anims[3].SetBool("On", true);
+                fLight.SetActive(true);
+                goFaster = true;
+            }
+        }
         else
         {
             pages[9].SetActive(false);
             pages[i].SetActive(true);
             openScreen = i;
-            if(i == 4 || i == 5)
+            if(i == 4)
             {
                 goFaster = true;
             }

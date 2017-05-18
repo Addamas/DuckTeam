@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 1bf498acc648af5499af14a44918e208
+timeCreated: 1494592177
+=======
 guid: b5240146954c67f4a8d1c7990265ff31
 timeCreated: 1494592988
+>>>>>>> e71d2a7f21fdf2bcd80a630e704d31f194502211
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -8,7 +13,11 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+<<<<<<< HEAD
+    sRGBTexture: 1
+=======
     sRGBTexture: 0
+>>>>>>> e71d2a7f21fdf2bcd80a630e704d31f194502211
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -44,7 +53,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
+<<<<<<< HEAD
+  textureType: 0
+=======
   textureType: 1
+>>>>>>> e71d2a7f21fdf2bcd80a630e704d31f194502211
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
@@ -58,6 +71,8 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+<<<<<<< HEAD
+=======
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
@@ -66,6 +81,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+>>>>>>> e71d2a7f21fdf2bcd80a630e704d31f194502211
   spriteSheet:
     serializedVersion: 2
     sprites: []
