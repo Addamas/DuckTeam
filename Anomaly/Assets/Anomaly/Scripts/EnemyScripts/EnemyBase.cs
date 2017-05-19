@@ -13,16 +13,19 @@ public class EnemyBase : MonoBehaviour
     [HideInInspector]
     public GameObject player;
     public NavMeshAgent agent;
-    public List<AudioManger> sound = new List<AudioManger>();
     [HideInInspector]
-    public enum EnemyState {Idle, Chasing, Walking, Inspecting}
+    public enum EnemyState { Idle, Chasing, Walking, Inspecting, ScriptedEvent }
     [HideInInspector]
     public EnemyState enemyState = EnemyState.Idle;
     [HideInInspector]
     public Vector3 randomPos;
     private NavMeshHit navHit;
 
-    public void Movement ()
+    private bool doingScriptedEvent;
+    private bool warpBackAfter;
+    private Vector3 loc;
+
+    public void Movement()
     {
         switch (enemyState)
         {
@@ -38,38 +41,66 @@ public class EnemyBase : MonoBehaviour
             // Idle //
             case EnemyState.Idle:
                 randomPos = Random.insideUnitSphere * GetComponent<FieldOfView>().viewRadius;
-                NavMesh.SamplePosition(transform.position + randomPos, out navHit, ((GetComponent<FieldOfView>().viewRadius) *2), NavMesh.AllAreas);
+                NavMesh.SamplePosition(transform.position + randomPos, out navHit, ((GetComponent<FieldOfView>().viewRadius) * 2), NavMesh.AllAreas);
                 agent.SetDestination(navHit.position);
                 enemyState = EnemyState.Walking;
                 break;
 
             // Chasing //
             case EnemyState.Chasing:
-                if(agent.speed != chaseSpeed)
-                    agent.speed = chaseSpeed;
                 float dist = Vector3.Distance(transform.position, player.transform.position);
                 if (dist > GetComponent<FieldOfView>().viewRadius)
                 {
                     enemyState = EnemyState.Idle;
                     break;
                 }
-                else agent.SetDestination(player.transform.position);
+                else
+                {
+                    agent.SetDestination(player.transform.position);
+                }
                 break;
 
             // Walking //
             case EnemyState.Walking:
-                if(agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
-                    if(inspectingArea)
-                        enemyState = EnemyState.Inspecting;
-                    else
-                        enemyState = EnemyState.Idle;
+                if (inspectingArea)
+                {
+                    enemyState = EnemyState.Inspecting;
+                }
+                if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+                {
+                    enemyState = EnemyState.Idle;
+                }
+                break;
+
+            // Scripted Events //
+            case EnemyState.ScriptedEvent:
+                if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+                {
+                    if (warpBackAfter)
+                    {
+                        agent.Warp(loc);
+                    }
+                    gameObject.GetComponent<FieldOfView>().targetMask = 9;
+                    enemyState = EnemyState.Idle;
+                }
                 break;
         }
     }
 
-    public void MakeSound (int num)
+    public void ScriptedEvent(Vector3 start, Vector3 end, bool seePlayer, bool warpBack)
     {
-        // sound[num].soundClip; //
+        warpBackAfter = warpBack;
+        if (!seePlayer)
+        {
+            gameObject.GetComponent<FieldOfView>().targetMask = 0;
+        }
+        if (!doingScriptedEvent)
+        {
+            loc = transform.position;
+            agent.Warp(start);
+            doingScriptedEvent = true;
+        }
+        agent.SetDestination(end);
+        enemyState = EnemyState.ScriptedEvent;
     }
-
 }
