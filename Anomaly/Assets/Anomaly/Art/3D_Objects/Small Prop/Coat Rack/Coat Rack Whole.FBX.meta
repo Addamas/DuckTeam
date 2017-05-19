@@ -1,13 +1,27 @@
 fileFormatVersion: 2
-guid: 87919901fe9a58a43ae22821074c4df5
+guid: f7f95418d10f74b4f9c4204b9b485b30
+timeCreated: 1495185725
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cylinder004
+    100004: Cylinder005
+    100006: Tube001
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: FireWoodHolder
+    400002: Cylinder004
+    400004: Cylinder005
+    400006: Tube001
+    2300000: Cylinder004
+    2300002: Cylinder005
+    2300004: Tube001
+    3300000: Cylinder004
+    3300002: Cylinder005
+    3300004: Tube001
+    4300000: Tube001
+    4300002: Cylinder004
+    4300004: Cylinder005
     9500000: //RootNode
   materials:
     importMaterials: 1
