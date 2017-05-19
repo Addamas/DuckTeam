@@ -1,49 +1,15 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 7657d5b257f0eb84a825b01aae4b379e
-timeCreated: 1495200166
-=======
-guid: 61e063b371f4d24409330f7c12b6d1a9
+guid: a600646063580934087df655f28a4423
 timeCreated: 1495200323
->>>>>>> df19e905ca8c73f2f3892f9a79654369f2139a8f
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Arrow
-    100002: Big Arrow
-    100004: Clock
-    100006: //RootNode
-    100008: Hang 1
-    100010: Weight 1
-    100012: Weight 2
-    400000: Arrow
-    400002: Big Arrow
-    400004: Clock
-    400006: //RootNode
-    400008: Hang 1
-    400010: Weight 1
-    400012: Weight 2
-    2300000: Arrow
-    2300002: Big Arrow
-    2300004: Clock
-    2300006: Hang 1
-    2300008: Weight 1
-    2300010: Weight 2
-    3300000: Arrow
-    3300002: Big Arrow
-    3300004: Clock
-    3300006: Hang 1
-    3300008: Weight 1
-    3300010: Weight 2
-    4300000: Clock
-    4300002: Weight 1
-    4300004: Hang 1
-    4300006: Weight 2
-    4300008: Arrow
-    4300010: Big Arrow
-    7400000: Take 001
-    9500000: //RootNode
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Plane001
   materials:
     importMaterials: 1
     materialName: 0
@@ -108,7 +74,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
