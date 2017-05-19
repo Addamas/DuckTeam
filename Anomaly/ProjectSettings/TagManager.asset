@@ -18,7 +18,7 @@ TagManager:
   - 
   - Player
   - Object
-  - 
+  - Phone
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Phone
+    uniqueID: 1231092195
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -10,9 +10,10 @@ public class ScriptedEvent : MonoBehaviour {
     float startTime;
     float journeyLength;
     GameObject player;
-    public enum EventType { movingObject, flickeringLight, other};
+    public enum EventType { movingObject, flickeringLight, playAudio, other};
     public EventType eventType;
     float changeTime;
+    public AudioSource audioSource;
     public float timeOn;
     public float timeOff;
 
@@ -31,6 +32,8 @@ public class ScriptedEvent : MonoBehaviour {
                 StartCoroutine("StartMoving");
                 break;
             case EventType.flickeringLight:
+                break;
+            case EventType.playAudio:
                 break;
             case EventType.other:
                 break;
@@ -51,22 +54,11 @@ public class ScriptedEvent : MonoBehaviour {
         yield break;
     }
 
-    public void Update()
+    public void OnTriggerEnter (Collider other)
     {
-        if (GetComponent<Light>())
+        if (other.tag == "Player")
         {
-            if (Time.time > changeTime)
-            {
-                GetComponent<Light>().enabled = !GetComponent<Light>().enabled;
-                if (GetComponent<Light>().enabled)
-                {
-                    changeTime = Time.time + timeOn;
-                }
-                else
-                {
-                    changeTime = Time.time + timeOff;
-                }
-            }
-        }   
+            audioSource.Play();
+        }
     }
 }
