@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: a7b70a3d5d040bb419b728ed25bff811
+guid: bead966641c709144aa7bf6ce51b96a1
+timeCreated: 1495536685
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -7,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: FireWoodHolder
+    4300000: Staircase
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -1,13 +1,38 @@
 fileFormatVersion: 2
-guid: a7b70a3d5d040bb419b728ed25bff811
+guid: 54fe607802ced234fb11bebf531849f3
+timeCreated: 1495536684
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: FireWoodHolder
+    100000: Bottom
+    100002: Handle
+    100004: LockLeft
+    100006: LockRIght
+    100008: //RootNode
+    100010: Top
+    400000: Bottom
+    400002: Handle
+    400004: LockLeft
+    400006: LockRIght
+    400008: //RootNode
+    400010: Top
+    2300000: Bottom
+    2300002: Handle
+    2300004: LockLeft
+    2300006: LockRIght
+    2300008: Top
+    3300000: Bottom
+    3300002: Handle
+    3300004: LockLeft
+    3300006: LockRIght
+    3300008: Top
+    4300000: Bottom
+    4300002: Top
+    4300004: LockRIght
+    4300006: LockLeft
+    4300008: Handle
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
