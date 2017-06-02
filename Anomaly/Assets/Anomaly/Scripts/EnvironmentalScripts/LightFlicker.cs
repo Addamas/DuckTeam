@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightFlicker : MonoBehaviour {
 
     public bool lightWillFlicker;
+    public float waitForSeconds = 0.09f;
     private bool lightOff;
     private float originalIntensity;
     [Header("chance will be 1 in x amount to have a chance of flickering")]
@@ -26,7 +27,7 @@ public class LightFlicker : MonoBehaviour {
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.09f);
+            yield return new WaitForSeconds(waitForSeconds);
 
             if (lightWillFlicker)
             {
