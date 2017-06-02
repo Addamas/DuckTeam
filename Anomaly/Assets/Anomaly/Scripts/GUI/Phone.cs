@@ -202,8 +202,13 @@ public class Phone : MonoBehaviour
     public GameObject phoneScreen;
     public string playerName;
 
+    public GameObject player;
+    public GameObject cam;
+
     public void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
         playerName = Environment.UserName;
         batteryWarning.gameObject.SetActive(false);
         time.text = System.DateTime.Now.TimeOfDay.Hours.ToString() + ":" + System.DateTime.Now.TimeOfDay.Minutes.ToString();
@@ -234,12 +239,17 @@ public class Phone : MonoBehaviour
                 inHand = false;
                 phoneCanvas.GetComponent<Canvas>().enabled = false;
                 phoneCase.GetComponent<MeshRenderer>().enabled = false;
+                player.GetComponent<PlayerController>().rotatePerm = true;
+                cam.GetComponent<MouseLook>().rotatePerm = true;
+
             }
             else
             {
                 inHand = true;
                 phoneCanvas.GetComponent<Canvas>().enabled = true;
                 phoneCase.GetComponent<MeshRenderer>().enabled = true;
+                player.GetComponent<PlayerController>().rotatePerm = false;
+                cam.GetComponent<MouseLook>().rotatePerm = false;
             }
         }
     }
