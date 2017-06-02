@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     public Vector3 cameraPosition;
     public Vector3 crouchCameraPosition;
+    public bool rotatePerm;
     [HideInInspector]
     public CharacterController controller;
     [HideInInspector]
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        rotatePerm = true;
         cameraAnimator = GameObject.Find("CameraHolder").GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         playerCamera = Camera.main.gameObject;
@@ -79,7 +81,10 @@ public class PlayerController : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
 
-        transform.Rotate(0, Input.GetAxis("Mouse X")*mouseSensitivity, 0);
+        if (rotatePerm)
+        {
+            transform.Rotate(0, Input.GetAxis("Mouse X") * mouseSensitivity, 0);
+        }
     }
 
     void Bobbing()
