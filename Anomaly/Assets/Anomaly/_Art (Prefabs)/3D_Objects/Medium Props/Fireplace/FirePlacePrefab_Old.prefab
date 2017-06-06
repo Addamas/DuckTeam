@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23456266892561488}
   - component: {fileID: 95315289299296502}
   m_Layer: 0
-  m_Name: FirePlacePrefab
+  m_Name: FirePlacePrefab_Old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
