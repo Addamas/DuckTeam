@@ -55,7 +55,7 @@ MonoBehaviour:
       reflection:
         blendType: 0
         reflectionQuality: 2
-        maxDistance: 100
+        maxDistance: 35
         iterationCount: 256
         stepSize: 3
         widthModifier: 0.5
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_Settings:
       focusDistance: 0.1
       aperture: 0.1
-      focalLength: 1
+      focalLength: 1.7
       useCameraFov: 0
       kernelSize: 1
   motionBlur:
@@ -296,7 +296,7 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       mode: 0
-      color: {r: 0.04768598, g: 0.3772595, b: 0.46323532, a: 1}
+      color: {r: 0.6911765, g: 0.6911765, b: 0.6911765, a: 1}
       center: {x: 0.5, y: 0.5}
       intensity: 0.45
       smoothness: 0.2
