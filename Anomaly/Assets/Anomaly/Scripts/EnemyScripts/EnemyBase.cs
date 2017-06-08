@@ -24,6 +24,7 @@ public class EnemyBase : MonoBehaviour
     private bool doingScriptedEvent;
     private bool warpBackAfter;
     private Vector3 loc;
+    private LayerMask lM;
 
     public void Movement()
     {
@@ -80,7 +81,7 @@ public class EnemyBase : MonoBehaviour
                     {
                         agent.Warp(loc);
                     }
-                    gameObject.GetComponent<FieldOfView>().targetMask = 9;
+                    gameObject.GetComponent<FieldOfView>().targetMask = lM;
                     enemyState = EnemyState.Idle;
                 }
                 break;
@@ -92,6 +93,7 @@ public class EnemyBase : MonoBehaviour
         warpBackAfter = warpBack;
         if (!seePlayer)
         {
+            lM = gameObject.GetComponent<FieldOfView>().targetMask;
             gameObject.GetComponent<FieldOfView>().targetMask = 0;
         }
         if (!doingScriptedEvent)
