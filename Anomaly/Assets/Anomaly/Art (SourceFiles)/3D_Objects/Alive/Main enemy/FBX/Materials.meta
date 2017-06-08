@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Anomaly/Assets/Anomaly/Art (SourceFiles)/3D_Objects/Alive/Main enemy/FBX/Materials.meta
 guid: b19dfe923e5d9ca4aa157a65c2bf2a14
 folderAsset: yes
 timeCreated: 1496908223
+=======
+guid: 8c15a4ed31b8a924ea36aa603abd9d7d
+folderAsset: yes
+timeCreated: 1496910280
+>>>>>>> 2fece608c53800bc9981b550a569499e13894a96:Anomaly/Assets/Anomaly/Art (SourceFiles)/3D_Objects/Alive/Main enemy/FBX/Materials.meta
 licenseType: Free
 DefaultImporter:
   userData: 

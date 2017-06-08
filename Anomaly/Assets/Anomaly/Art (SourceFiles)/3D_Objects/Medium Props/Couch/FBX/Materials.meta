@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Anomaly/Assets/Anomaly/Art (SourceFiles)/3D_Objects/Medium Props/Couch/FBX/Materials.meta
 guid: aeb636e00e525e645a52179889d93c42
 folderAsset: yes
 timeCreated: 1496908211
+=======
+guid: 44cbd6797ce9b334baec34538993df72
+folderAsset: yes
+timeCreated: 1496910273
+>>>>>>> 2fece608c53800bc9981b550a569499e13894a96:Anomaly/Assets/Anomaly/Art (SourceFiles)/3D_Objects/Medium Props/Couch/FBX/Materials.meta
 licenseType: Free
 DefaultImporter:
   userData: 
