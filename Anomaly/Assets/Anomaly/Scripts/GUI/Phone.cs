@@ -237,8 +237,11 @@ public class Phone : MonoBehaviour
             if (inHand)
             {
                 inHand = false;
-                phoneCanvas.GetComponent<Canvas>().enabled = false;
-                phoneCase.GetComponent<MeshRenderer>().enabled = false;
+                if(phoneCanvas != null)
+                {
+                    phoneCanvas.GetComponent<Canvas>().enabled = false;
+                    phoneCase.GetComponent<MeshRenderer>().enabled = false;
+                }
                 player.GetComponent<PlayerController>().rotatePerm = true;
                 cam.GetComponent<MouseLook>().rotatePerm = true;
 
@@ -246,8 +249,11 @@ public class Phone : MonoBehaviour
             else
             {
                 inHand = true;
-                phoneCanvas.GetComponent<Canvas>().enabled = true;
-                phoneCase.GetComponent<MeshRenderer>().enabled = true;
+                if(phoneCanvas != null)
+                {
+                    phoneCanvas.GetComponent<Canvas>().enabled = true;
+                    phoneCase.GetComponent<MeshRenderer>().enabled = true;
+                }
                 player.GetComponent<PlayerController>().rotatePerm = false;
                 cam.GetComponent<MouseLook>().rotatePerm = false;
             }
