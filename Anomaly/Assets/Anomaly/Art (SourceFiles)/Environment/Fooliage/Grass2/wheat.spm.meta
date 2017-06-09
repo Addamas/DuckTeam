@@ -4,7 +4,7 @@ timeCreated: 1484127592
 licenseType: Free
 SpeedTreeImporter:
   serializedVersion: 4
-  mainColor: {r: 1, g: 1, b: 1, a: 1}
+  mainColor: {r: 0.41176468, g: 0.30276814, b: 0.30276814, a: 1}
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
   alphaTestRef: 0.377
   bestWindQuality: 3
@@ -23,7 +23,7 @@ SpeedTreeImporter:
   billboardTransitionCrossFadeWidth: 0.25
   fadeOutWidth: 0.25
   scaleFactor: 0.3
-  materialVersion: 2
+  materialVersion: 3
   userData: 
   assetBundleName: 
   assetBundleVariant: 

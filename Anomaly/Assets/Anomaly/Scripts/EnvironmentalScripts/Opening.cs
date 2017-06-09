@@ -8,16 +8,24 @@ public class Opening : MonoBehaviour {
     public float alpha;
     public float endalpha;
     public Color color;
+    public float timer;
 
-	// Use this for initialization
 	void Start () {
         color = GameObject.Find("BlackBG").GetComponent<Image>().color;
         endalpha = 0;
-        StartCoroutine("FadeFromBlack");
-        Destroy(gameObject, 15);
+        timer = 82----;
     }
 
-	// Update is called once per frame
+    void Update()
+    {
+        if (timer <= 0)
+        {
+            StartCoroutine("FadeFromBlack");
+            Destroy(gameObject, 30);
+        }
+        timer -= Time.deltaTime;
+    }
+
 	public IEnumerator FadeFromBlack () {
         while (color.a != endalpha)
         {
