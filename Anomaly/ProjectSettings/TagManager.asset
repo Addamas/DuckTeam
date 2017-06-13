@@ -9,6 +9,7 @@ TagManager:
   - ChargePoint
   - SuitCase
   - Note
+  - Door
   layers:
   - Default
   - TransparentFX

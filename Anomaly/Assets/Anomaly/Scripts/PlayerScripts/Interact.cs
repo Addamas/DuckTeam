@@ -5,20 +5,33 @@ using UnityEngine;
 public class Interact : MonoBehaviour {
 
     public GameObject ObjectiveManager;
+    bool delay;
 
 	public void OnTriggerStay(Collider c)
     {
-        if (Input.GetButtonDown("Use"))
+        if (Input.GetButtonDown("Use") && !delay)
         {
-            if (c.transform.tag == "SuitCase")
+            switch (c.transform.tag)
             {
-                ObjectiveManager.GetComponent<Objectives>().Suitcase();
-            }
-            else if (c.transform.tag == "Note")
-            {
-                ObjectiveManager.GetComponent<Objectives>().FoundNote();
-                Destroy(c.gameObject);
+                case "Door":
+                    c.GetComponent<DoorScript>().Use();
+                    StartCoroutine(DoDelay());
+                    break;
+                case "Note":
+                    ObjectiveManager.GetComponent<Objectives>().FoundNote();
+                    Destroy(c.gameObject);
+                    break;
+                case "SuitCase":
+                    ObjectiveManager.GetComponent<Objectives>().Suitcase();
+                    break;
             }
         }
+    }
+
+    IEnumerator DoDelay()
+    {
+        delay = true;
+        yield return new WaitForSeconds(0.5f);
+        delay = false;
     }
 }
