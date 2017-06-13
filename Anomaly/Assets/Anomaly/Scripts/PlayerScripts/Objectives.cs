@@ -10,6 +10,9 @@ public class Objectives : MonoBehaviour {
     public string[] objectiveString;
     public int objectiveID;
     bool usedSuitcase;
+    public GameObject[] objectiveTriggers;
+    public Animator suitcaseAnim;
+    public Animator generatorAnim;
 
     public Text objectiveText;
 
@@ -23,13 +26,43 @@ public class Objectives : MonoBehaviour {
         SetObjective();
     }
 
-    public void Suitcase()
+    public void CompletedObjective(int i)
     {
-        if (!usedSuitcase)
+        switch (i)
         {
-            usedSuitcase = true;
-            objectiveID++;
-            SetObjective();
+            case 0:
+                //Entered House
+                objectiveTriggers[0].SetActive(false);
+                objectiveID++;
+                SetObjective();
+                break;
+            case 1:
+                //Found Suitcase
+                if (!usedSuitcase)
+                {
+                    usedSuitcase = true;
+                    suitcaseAnim.SetTrigger("Open");
+                    objectiveID++;
+                    SetObjective();
+                    generatorAnim.SetBool("Off", true);
+                }
+                break;
+            case 2:
+                //Checked Generator
+                objectiveID++;
+                SetObjective();
+                break;
+            case 3:
+                //Got Fuel
+                objectiveID++;
+                SetObjective();
+                break;
+            case 4:
+                //Refilled Generator
+                objectiveID++;
+                SetObjective();
+                generatorAnim.SetBool("Off", false);
+                break;
         }
     }
 

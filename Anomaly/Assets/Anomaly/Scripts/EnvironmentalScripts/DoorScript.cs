@@ -6,10 +6,11 @@ public class DoorScript : MonoBehaviour {
 
     bool isOpen;
     public Animator anim;
+    public bool oneWay;
 
     public void Use()
     {
-        if (isOpen)
+        if (isOpen && !oneWay)
         {
             isOpen = false;
             anim.SetTrigger("Close");

@@ -22,7 +22,13 @@ public class Interact : MonoBehaviour {
                     Destroy(c.gameObject);
                     break;
                 case "SuitCase":
-                    ObjectiveManager.GetComponent<Objectives>().Suitcase();
+                    ObjectiveManager.GetComponent<Objectives>().CompletedObjective(1);
+                    break;
+                case "Generator":
+                    if(ObjectiveManager.GetComponent<Objectives>().objectiveID == 2)
+                    {
+                        ObjectiveManager.GetComponent<Objectives>().CompletedObjective(2);
+                    }
                     break;
             }
         }
