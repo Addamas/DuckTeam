@@ -41,7 +41,7 @@ public class Objectives : MonoBehaviour {
 
     void SetObjective()
     {
-        if(objectiveID == 1)
+        if(objectiveID == 5)
         {
             objectiveText.text = objectiveString[objectiveID] + " " + collectedNotes.ToString() + "/" + totalNotes.ToString();
             return;

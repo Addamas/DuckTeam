@@ -13,7 +13,7 @@ public class Opening : MonoBehaviour {
 	void Start () {
         color = GameObject.Find("BlackBG").GetComponent<Image>().color;
         endalpha = 0;
-        timer = 82;
+        timer = 4;
     }
 
     void Update()
