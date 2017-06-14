@@ -11,6 +11,9 @@ TagManager:
   - Note
   - Door
   - Generator
+  - Jerrycan
+  - Tractor
+  - Shrek
   layers:
   - Default
   - TransparentFX

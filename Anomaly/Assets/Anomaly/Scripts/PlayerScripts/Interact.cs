@@ -6,6 +6,12 @@ public class Interact : MonoBehaviour {
 
     public GameObject ObjectiveManager;
     bool delay;
+    AudioSource allstar;
+
+    void Start()
+    {
+        allstar = GetComponent<AudioSource>();
+    }
 
 	public void OnTriggerStay(Collider c)
     {
@@ -28,6 +34,36 @@ public class Interact : MonoBehaviour {
                     if(ObjectiveManager.GetComponent<Objectives>().objectiveID == 2)
                     {
                         ObjectiveManager.GetComponent<Objectives>().CompletedObjective(2);
+                    }
+                    else
+                    {
+                        if (ObjectiveManager.GetComponent<Objectives>().hasFuel)
+                        {
+                            ObjectiveManager.GetComponent<Objectives>().CompletedObjective(4);
+                        }
+                    }
+                    break;
+                case "Jerrycan":
+                    if (ObjectiveManager.GetComponent<Objectives>().objectiveID == 3)
+                    {
+                        ObjectiveManager.GetComponent<Objectives>().hasJerrycan = true;
+                        Destroy(c.gameObject);
+                    }
+                    break;
+                case "Tractor":
+                    if (ObjectiveManager.GetComponent<Objectives>().hasJerrycan && ObjectiveManager.GetComponent<Objectives>().hasFuel != true)
+                    {
+                        ObjectiveManager.GetComponent<Objectives>().CompletedObjective(3);
+                    }
+                    break;
+                case "Shrek":
+                    if (!allstar.isPlaying)
+                    {
+                        allstar.Play();
+                    }
+                    else
+                    {
+                        allstar.Stop();
                     }
                     break;
             }

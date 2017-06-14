@@ -13,17 +13,29 @@ public class Objectives : MonoBehaviour {
     public GameObject[] objectiveTriggers;
     public Animator suitcaseAnim;
     public Animator generatorAnim;
+    public bool hasJerrycan;
+    public bool hasFuel;
+    public GameObject[] lights;
+    public Material lightMaterial;
 
     public Text objectiveText;
 
     void Start()
     {
         FirstObjective();
+        LightMaterial(2);
     }
 
     public void FirstObjective()
     {
         SetObjective();
+    }
+
+    void LightMaterial(int i)
+    {
+        Color baseColor = Color.yellow;
+        Color finalColor = baseColor * i;
+        lightMaterial.SetColor("_EmissionColor", finalColor);
     }
 
     public void CompletedObjective(int i)
@@ -45,6 +57,11 @@ public class Objectives : MonoBehaviour {
                     objectiveID++;
                     SetObjective();
                     generatorAnim.SetBool("Off", true);
+                    LightMaterial(0);
+                    for(int l = 0; l < lights.Length; l++)
+                    {
+                        lights[l].SetActive(false);
+                    }
                 }
                 break;
             case 2:
@@ -54,6 +71,7 @@ public class Objectives : MonoBehaviour {
                 break;
             case 3:
                 //Got Fuel
+                hasFuel = true;
                 objectiveID++;
                 SetObjective();
                 break;
@@ -62,6 +80,13 @@ public class Objectives : MonoBehaviour {
                 objectiveID++;
                 SetObjective();
                 generatorAnim.SetBool("Off", false);
+                hasFuel = false;
+                hasJerrycan = false;
+                for (int l = 0; l < lights.Length; l++)
+                {
+                    lights[l].SetActive(true);
+                }
+                LightMaterial(2);
                 break;
         }
     }
