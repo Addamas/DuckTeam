@@ -132,6 +132,16 @@ public class Phone : MonoBehaviour
         InsanityCheck();
     }
 
+    public void InsanityBoost(int i)
+    {
+        insanity += i;
+        bgFill -= i;
+        float dr = 1;
+        dr = bgFill / 100;
+        insaneFill.fillAmount = dr;
+        InsanityCheck();
+    }
+
     public void InsanityCheck()
     {
         if (insanity >= 100)

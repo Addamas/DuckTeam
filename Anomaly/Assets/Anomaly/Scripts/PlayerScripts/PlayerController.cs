@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(!Input.GetButton("Crouch") && playerCamera.transform.localPosition != cameraPosition)
         {
-            if (!Physics.Raycast(transform.position, transform.up, height))
+            if (!Physics.Raycast(transform.position, transform.up, (height/2)))
             {
                 GetComponent<CharacterController>().height = height;
                 ColLoc.y = 0;
