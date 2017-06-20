@@ -5,34 +5,33 @@ using UnityEngine.UI;
 
 public class Opening : MonoBehaviour {
 
-    public float alpha;
-    public float endalpha;
-    public Color color;
-    public float timer;
+    Animator anim;
 
 	void Start () {
-        color = GameObject.Find("BlackBG").GetComponent<Image>().color;
-        endalpha = 0;
-        timer = 4;
+        anim = GetComponent<Animator>();
     }
 
-    void Update()
+    public void StartFade(int i)
     {
-        if (timer <= 0)
+        switch (i)
         {
-            StartCoroutine("FadeFromBlack");
-            Destroy(gameObject, 30);
+            case 0:
+                anim.SetTrigger("Off");
+                break;
+            case 1:
+                anim.SetTrigger("On");
+                StartCoroutine(WaitForNext(1));
+                break;
         }
-        timer -= Time.deltaTime;
     }
-
-	public IEnumerator FadeFromBlack () {
-        while (color.a != endalpha)
+    IEnumerator WaitForNext(int i)
+    {
+        yield return new WaitForSeconds(1.3f);
+        switch (i)
         {
-            color.a = Mathf.Lerp(color.a, 0, .3f * Time.deltaTime);
-            GameObject.Find("BlackBG").GetComponent<Image>().color = color;
-            yield return new WaitForEndOfFrame();
+            case 1:
+                StartFade(0);
+                break;
         }
-        yield break;
     }
 }

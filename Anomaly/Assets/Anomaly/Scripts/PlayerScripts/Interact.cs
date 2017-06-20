@@ -5,12 +5,15 @@ using UnityEngine;
 public class Interact : MonoBehaviour {
 
     public GameObject ObjectiveManager;
+    GameObject player;
     bool delay;
     AudioSource allstar;
+    public GameObject opening;
 
     void Start()
     {
         allstar = GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
 	public void OnTriggerStay(Collider c)
@@ -20,7 +23,15 @@ public class Interact : MonoBehaviour {
             switch (c.transform.tag)
             {
                 case "Door":
-                    c.GetComponent<DoorScript>().Use();
+                    if(c.GetComponent<DoorScript>() != null)
+                    {
+                        c.GetComponent<DoorScript>().Use();
+                    }
+                    else
+                    {
+                        opening.GetComponent<Opening>().StartFade(1);
+                        c.GetComponent<Teleporter>().PrepareTp(player);
+                    }
                     StartCoroutine(DoDelay());
                     break;
                 case "Note":
