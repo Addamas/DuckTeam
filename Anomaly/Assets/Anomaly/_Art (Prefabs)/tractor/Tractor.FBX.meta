@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 55c97e3746b7b934097bbbb2e14f0aa4
+timeCreated: 1498142955
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Big wheel
+    100002: Big wheel001
+    100004: Big wheel002
+    100006: Big wheel003
+    100008: Body
+    100010: chair
+    100012: Front
+    100014: poke
+    100016: Poles
+    100018: Stiring wheel
+    100020: //RootNode
+    100022: wheel cap
+    100024: wheel cap001
+    100026: wheel cap002
+    100028: wheel cap003
+    400000: Big wheel
+    400002: Big wheel001
+    400004: Big wheel002
+    400006: Big wheel003
+    400008: Body
+    400010: chair
+    400012: Front
+    400014: poke
+    400016: Poles
+    400018: Stiring wheel
+    400020: //RootNode
+    400022: wheel cap
+    400024: wheel cap001
+    400026: wheel cap002
+    400028: wheel cap003
+    2300000: Big wheel
+    2300002: Big wheel001
+    2300004: Big wheel002
+    2300006: Big wheel003
+    2300008: Body
+    2300010: chair
+    2300012: Front
+    2300014: poke
+    2300016: Poles
+    2300018: Stiring wheel
+    2300020: wheel cap
+    2300022: wheel cap001
+    2300024: wheel cap002
+    2300026: wheel cap003
+    3300000: Big wheel
+    3300002: Big wheel001
+    3300004: Big wheel002
+    3300006: Big wheel003
+    3300008: Body
+    3300010: chair
+    3300012: Front
+    3300014: poke
+    3300016: Poles
+    3300018: Stiring wheel
+    3300020: wheel cap
+    3300022: wheel cap001
+    3300024: wheel cap002
+    3300026: wheel cap003
+    4300000: Front
+    4300002: Body
+    4300004: Big wheel
+    4300006: Poles
+    4300008: chair
+    4300010: Stiring wheel
+    4300012: poke
+    4300014: wheel cap
+    4300016: Big wheel001
+    4300018: wheel cap001
+    4300020: Big wheel002
+    4300022: Big wheel003
+    4300024: wheel cap002
+    4300026: wheel cap003
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
