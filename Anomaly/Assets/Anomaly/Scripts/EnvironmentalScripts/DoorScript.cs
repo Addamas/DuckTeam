@@ -21,12 +21,30 @@ public class DoorScript : MonoBehaviour {
         {
             isOpen = false;
             anim.SetTrigger("Close");
+            StopCoroutine(AutoCloser());
             return;
         }
         else
         {
             isOpen = true;
             anim.SetTrigger("Open");
+            StartCoroutine(AutoCloser());
+        }
+    }
+
+    IEnumerator AutoCloser()
+    {
+        yield return new WaitForSeconds(5);
+        if (isOpen)
+        {
+            anim.SetTrigger("Close");
+            isOpen = false;
+            float dist = Vector3.Distance(transform.position, phone.transform.position);
+            if(dist < 10)
+            {
+                //Play door close sound
+                phone.GetComponent<Phone>().InsanityBoost(insanityRaise);
+            }
         }
     }
 }

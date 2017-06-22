@@ -11,6 +11,9 @@ public class FieldOfView : MonoBehaviour {
 
     public LayerMask targetMask;
     public LayerMask obstacleMask;
+
+    public GameObject enemy;
+    public bool isSeeingPlayer;
     
     private void Start()
     {
@@ -31,6 +34,16 @@ public class FieldOfView : MonoBehaviour {
     {
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position,viewRadius,targetMask);
 
+        if(targetsInViewRadius.Length < 1)
+        {
+            if (isSeeingPlayer)
+            {
+                isSeeingPlayer = false;
+                enemy.GetComponent<GerjohnEnemy>().seePlayer = false;
+            }
+            return;
+        }
+
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
@@ -41,7 +54,11 @@ public class FieldOfView : MonoBehaviour {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
 
                 if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
-                    gameObject.GetComponent<MainEnemy>().enemyState = EnemyBase.EnemyState.Chasing;
+                {
+                    enemy.GetComponent<GerjohnEnemy>().FoundPlayer();
+                    enemy.GetComponent<GerjohnEnemy>().seePlayer = true;
+                    isSeeingPlayer = true;
+                }   
             }
         }
     }

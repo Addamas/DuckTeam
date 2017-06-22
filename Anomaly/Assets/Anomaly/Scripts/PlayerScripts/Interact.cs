@@ -34,6 +34,14 @@ public class Interact : MonoBehaviour {
                     }
                     StartCoroutine(DoDelay());
                     break;
+                case "Closet":
+                    if(c.GetComponent<Closet>() != null)
+                    {
+                        c.GetComponent<Closet>().Use();
+                        print("Interacted with closet");
+                    }
+                    StartCoroutine(DoDelay());
+                    break;
                 case "Note":
                     ObjectiveManager.GetComponent<Objectives>().FoundNote();
                     Destroy(c.gameObject);
